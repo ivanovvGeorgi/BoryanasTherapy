@@ -1,0 +1,31 @@
+/* Existing styles */
+.flatpickr-calendar {
+    background-color: white !important;
+}
+
+.flatpickr-day.selected {
+    background-color: #3498db !important;
+    color: white !important;
+}
+
+.flatpickr-input {
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.flatpickr-day.weekend {
+    color: red !important;
+}
+
+.flatpickr-day.today {
+    font-weight: bold !important;
+}
+
+/* New style for fully booked days */
+.flatpickr-day.fully-booked {
+    color: orange !important;
+}
+
+.flatpickr-day.fully-booked:hover {
+    cursor: not-allowed;
+}

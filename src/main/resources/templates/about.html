@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head">
+
+</head>
+<body>
+<div th:replace="fragments/navbar :: body"></div>
+
+<div class="parallax-section">
+    <h1 class="parallax-title">About Me</h1>
+</div>
+
+<!-- Content Section -->
+<section class="about-me">
+    <div class="content">
+        <h2>Welcome to My Therapy Practice</h2>
+        <p>
+            I am a certified psychologist with years of experience helping people navigate
+            life's challenges. My approach focuses on providing a safe and welcoming
+            environment where we can work together toward your personal growth and healing.
+        </p>
+        <p>
+            Whether you're dealing with anxiety, depression, or just need someone to talk to,
+            I'm here to support you on your journey.
+        </p>
+    </div>
+</section>
+<!-- Certificates Section -->
+<section class="certificates">
+    <h2>My Certifications</h2>
+    <div class="certificate-gallery">
+        <div class="certificate-item">
+            <img src="/images/certificate-1.png" alt="Certificate 1" class="certificate-img">
+        </div>
+        <div class="certificate-item">
+            <img src="/images/certificate-2.jpg" alt="Certificate 2" class="certificate-img">
+        </div>
+        <div class="certificate-item">
+            <img src="/images/certificate-3.png" alt="Certificate 3" class="certificate-img">
+        </div>
+    </div>
+</section>
+
+<script th:src="@{/js/certificates.js}"></script>
+<div th:replace="fragments/footer :: body"></div>
+</body>
+</html>

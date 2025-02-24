@@ -1,0 +1,32 @@
+<!-- src/main/resources/templates/admin/control-panel.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Admin Control Panel</title>
+  <link rel="stylesheet" th:href="@{/css/reset-css.css}">
+  <link rel="stylesheet" th:href="@{/css/admin.css}">
+  <link rel="stylesheet" th:href="@{/css/navbar.css}">
+</head>
+<body>
+
+<!-- Navbar Fragment -->
+<div th:replace="fragments/navbar :: body"></div>
+
+<!-- Main Content Area -->
+<div class="control-panel-container">
+  <h1 class="control-panel-title" th:text="#{greeting}">Welcome to the Admin Control Panel</h1>
+
+  <section class="control-panel-links">
+    <h2 class="section-title">Manage the System</h2>
+
+    <ul class="link-list">
+      <li><a th:href="${bookingsLink}" th:text="#{manageBookings}">Manage Bookings</a></li>
+      <li><a th:href="${messagesLink}" th:text="#{manageMessages}">Manage Messages</a></li>
+      <li><a href="/admin/calendar" th:text="#{manageCalendar}">Manage Calendar</a></li>
+    </ul>
+  </section>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head">
+    <title>Book a Session</title>
+    <style>
+        .available {
+            background-color: green;
+            color: white;
+        }
+        .booked {
+            background-color: yellow;
+            color: black;
+        }
+        .slot {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+
+
+<div th:replace="fragments/navbar :: body"></div>
+
+<!-- Flatpickr CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<!-- Link to your custom CSS file -->
+<link rel="stylesheet" th:href="@{/css/custom-flatpickr.css}">
+<!-- Flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+
+<div class="booking-container">
+    <h1>Book a Therapy Session with Boryana</h1>
+
+
+
+    <form th:action="@{/test-book}" th:object="${bookingDTO}" method="post">
+        <div class="input_container">
+
+            <!-- Name -->
+            <label class="booking_label">Name:</label>
+            <label class="booking_input">
+                <input type="text" th:field="*{name}" required>
+            </label>
+            <span class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+
+            <!-- Email -->
+            <label class="booking_label">Email:</label>
+            <label class="booking_input">
+                <input type="email" th:field="*{email}" required>
+            </label>
+            <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+
+            <!-- Date -->
+            <label class="booking_label">Date:</label>
+            <label class="booking_input">
+                <input type="text" id="datepicker" th:field="*{date}" th:placeholder="#{selectDate}"
+                        required>
+            </label>
+            <span class="error" th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></span>
+        </div>
+
+        <!-- Time -->
+        <div id="time-slots">
+            <th:block th:each="slot : ${timeSlots}">
+                <label th:classappend="${slot.isAvailable ? 'available' : 'booked'}" class="slot">
+                    <input type="radio" th:id="'time_' + ${slot.time}" name="time" th:value="${slot.time}"
+                           th:disabled="${!slot.isAvailable}" required>
+                    <span th:text="${slot.time}"></span>
+                </label>
+            </th:block>
+        </div>
+
+
+        <span class="error" th:if="${#fields.hasErrors('time')}" th:errors="*{time}"></span>
+
+        <!-- Submit -->
+        <button class="booking_button" type="submit">Book Now</button>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/js/booking.js"></script>
+<div th:replace="fragments/footer :: body"></div>
+</body>
+</html>

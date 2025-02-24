@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Admin Dashboard - Messages</title>
+  <link rel="stylesheet" th:href="@{/css/reset-css.css}">
+  <link rel="stylesheet" th:href="@{/css/admin.css}">
+  <link rel="stylesheet" th:href="@{/css/navbar.css}">
+</head>
+<body>
+<!-- Navbar Fragment -->
+<div th:replace="fragments/navbar :: body"></div>
+
+<!-- Main Content Area -->
+<div class="dashboard-container">
+  <h1 class="dashboard-title">Admin Dashboard</h1>
+
+  <!-- New Messages Section -->
+  <section class="messages-section new-messages">
+    <h2 class="section-title">New Messages</h2>
+    <ul class="message-list">
+      <!-- Loop through the new messages and display each message -->
+      <li th:each="message : ${newMessages}" class="message-card">
+        <div class="message-info">
+          <p><strong>Date:</strong> <span th:text="${message.date}"></span></p>
+          <p><strong>Sender:</strong> <span th:text="${message.name}"></span></p>
+          <p><strong>Message:</strong> <span th:text="${message.message}"></span></p>
+          <form th:action="@{/admin/read/{id}(id=${message.id})}" method="post">
+            <button type="submit" class="mark-read-button">Mark as Read</button>
+          </form>
+
+          <form th:action="@{/admin/delete/{id}(id=${message.id})}" method="post">
+            <button type="submit" class="delete-button">Delete</button>
+          </form>
+
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Read Messages Section -->
+  <section class="messages-section read-messages">
+    <h2 class="section-title">Read Messages</h2>
+    <ul class="message-list">
+      <!-- Loop through the read messages and display each message -->
+      <li th:each="message : ${readMessages}" class="message-card">
+        <div class="message-info">
+          <p><strong>Date:</strong> <span th:text="${message.date}"></span></p>
+          <p><strong>Sender:</strong> <span th:text="${message.name}"></span></p>
+          <p><strong>Message:</strong> <span th:text="${message.message}"></span></p>
+        </div>
+
+        <form th:action="@{/admin/delete/{id}(id=${message.id})}" method="post">
+          <button type="submit" class="delete-button">Delete</button>
+        </form>
+      </li>
+    </ul>
+  </section>
+</div>
+
+</body>
+</html>

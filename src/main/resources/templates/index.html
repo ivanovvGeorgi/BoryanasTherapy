@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head">
+
+</head>
+<body>
+<div th:replace="fragments/navbar :: body"></div>
+<section class="hero">
+    <h1>Welcome to Boryana's Therapy</h1>
+    <p>Your journey to inner peace begins here</p>
+    <p class="book-now-button-container"><a href="/book" class="btn-primary">Book an Appointment</a></p>
+</section>
+
+<section class="about">
+    <h2>About Me</h2>
+    <p>Professional therapist dedicated to helping you find balance and wellness.</p>
+</section>
+
+<section class="services">
+    <h2>My Services</h2>
+    <ul>
+        <li>Individual Therapy</li>
+        <li>Couples Therapy</li>
+        <li>Stress Management</li>
+    </ul>
+</section>
+
+<section class="testimonials">
+    <h2>What My Clients Say</h2>
+    <blockquote>"Boryana has changed my life. Highly recommend!"</blockquote>
+    <blockquote>"Professional and compassionate therapy sessions."</blockquote>
+</section>
+
+<section class="contact-home">
+    <h2>Contact Me</h2>
+    <p>Email: info@boryanastherapy.com | Phone: +359 895 64 67 62</p>
+</section>
+<div th:replace="fragments/footer :: body"></div>
+<script src="/js/homeScript.js"></script>
+
+</body>
+</html>

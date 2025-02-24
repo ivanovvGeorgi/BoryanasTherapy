@@ -1,0 +1,72 @@
+/* Reset CSS - Modern Version */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove list styles (bullets, numbers) */
+ul, ol {
+    list-style: none;
+}
+
+/* Remove default text decoration */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Reset heading and paragraph spacing */
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    font-weight: normal;
+}
+
+/* Reset form elements */
+input, button, textarea, select {
+    font: inherit;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+/* Ensure buttons inherit fonts */
+button {
+    cursor: pointer;
+}
+
+/* Remove default table spacing */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Ensure images don't exceed their container */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Set default font smoothing for better rendering */
+html {
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Set a default background and text color */
+body {
+    background: #fff;
+    color: #000;
+    line-height: 1.5;
+}

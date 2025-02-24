@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/head">
+    <title>Method Not Allowed</title></head>
+<body class="error-page">
+<div th:replace="fragments/navbar :: body"></div>
+
+<div class="error-container">
+    <h1>405</h1>
+    <p>Sorry, the method used is not allowed.</p>
+    <a href="/" class="btn-error">Return to Home</a>
+</div>
+
+<div th:replace="fragments/footer :: body"></div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+server:
+  error:
+    whitelabel:
+      enabled: false
+    include-stacktrace: never
+    include-message: always
+    path: /error
+
+
+spring:
+  messages:
+    basename: messages/messages
+    encoding: UTF-8
+  security:
+    filter:
+      dispatcher-types: REQUEST,ERROR,ASYNC,FORWARD
+    user:
+      name: gojgo
+      password: 1234
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/boryanastherapy?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD:1234}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: gojgo6@gmail.com
+    password: wexq qvyi macq khwh
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+
+  sql:
+    init:
+      mode: never
+      data-locations: classpath:data.sql
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true

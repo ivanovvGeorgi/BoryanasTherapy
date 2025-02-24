@@ -1,0 +1,209 @@
+/* Navbar Styles */
+#navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background: white;
+    color: black;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+#navbar .logo {
+    max-height: 100px;
+    max-width: 100px;
+    border-radius: 100%;
+}
+
+
+#navbar .nav_title {
+    font-size: 36px;
+    font-family: "Brush Script MT", cursive;
+    color: black;
+}
+
+/* Desktop Navigation */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #000; /* Adjust the color as needed */
+    font-weight: bold;
+}
+.nav-links a:hover{
+    color: #2c3e50;
+
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 1px; /* Adjust thickness */
+    background-color: #000; /* Adjust color */
+    transition: all 0.3s ease-out;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/*.nav-links a {*/
+/*    text-decoration: none;*/
+/*    font-size: 24px;*/
+/*    font-weight: bold;*/
+/*    color: black;*/
+/*    transition: 0.3s;*/
+/*}*/
+
+/*.nav-links a:hover {*/
+/*    color: #ff5c5c;*/
+/*}*/
+
+/* Hamburger Menu Button */
+.menu-toggle {
+    display: none;
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+}
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown button */
+.dropbtn {
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    position: relative; /* For positioning the arrow */
+}
+
+/* Arrow styling */
+.arrow {
+    margin-left: 0;
+    font-size: 12px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Hover effect for links */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu when hovering over the dropdown button */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Rotate the arrow when the dropdown content is shown */
+.dropdown:hover .arrow {
+    transform: rotate(180deg); /* Rotate arrow on hover */
+}
+
+/* Ensuring the arrow shows correctly when hovering */
+.dropdown .arrow {
+    transition: transform 0.3s ease-in-out;
+}
+
+/*Language icons*/
+.language-switcher {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.flag-icon {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.flag-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav_title {
+        font-size: 36px;
+        font-family: "Brush Script MT", cursive;
+        color: black;
+        margin-left: 20px; /* Adds spacing from the logo */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        width: 250px;
+        background: white;
+        padding: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* Show menu when active */
+    .nav-links.active {
+        display: flex;
+    }
+}

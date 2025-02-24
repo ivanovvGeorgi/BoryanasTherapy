@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" th:href="@{/css/reset-css.css}">
+  <link rel="stylesheet" th:href="@{/css/admin.css}">
+  <link rel="stylesheet" th:href="@{/css/navbar.css}">
+</head>
+<body>
+<!-- Navbar Fragment -->
+<div th:replace="fragments/navbar :: body"></div>
+
+<!-- Main Content Area -->
+<div class="dashboard-container">
+  <h1 class="dashboard-title">Admin Dashboard</h1>
+
+  <!-- Upcoming Bookings Section -->
+  <section class="bookings-section upcoming-bookings">
+    <h2 class="section-title">Upcoming Bookings</h2>
+    <ul class="booking-list">
+      <!-- Loop through the upcoming bookings and display each booking -->
+      <li th:each="booking : ${upcomingBookings}" class="booking-card">
+        <div class="booking-info">
+          <p><strong>Name:</strong> <span th:text="${booking.name}"></span></p>
+          <p><strong>Email:</strong> <span th:text="${booking.email}"></span></p>
+          <p><strong>Date:</strong> <span th:text="${booking.formattedDate}"></span></p>
+          <p><strong>Time:</strong> <span th:text="${booking.time}"></span></p>
+          <form th:action="@{/admin/cancel/{id}(id=${booking.id})}" method="post">
+            <button type="submit" class="cancel-button">Cancel Booking</button>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Past Bookings Section -->
+  <section class="bookings-section past-bookings">
+    <h2 class="section-title">Past Bookings</h2>
+    <ul class="booking-list">
+      <!-- Loop through the past bookings and display each booking -->
+      <li th:each="booking : ${pastBookings}" class="booking-card">
+        <div class="booking-info">
+          <p><strong>Name:</strong> <span th:text="${booking.name}"></span></p>
+          <p><strong>Email:</strong> <span th:text="${booking.email}"></span></p>
+          <p><strong>Date:</strong> <span th:text="${booking.formattedDate}"></span></p>
+          <p><strong>Time:</strong> <span th:text="${booking.time}"></span></p>
+          <form th:action="@{/admin/cancel/{id}(id=${booking.id})}" method="post">
+            <button type="submit" class="cancel-button">Delete Booking</button>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </section>
+</div>
+
+</body>
+</html>
