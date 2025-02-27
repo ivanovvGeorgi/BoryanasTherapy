@@ -9,4 +9,5 @@ public final static String OWNER_TEXT_FORMAT = "%s has made an appointment for %
 public final static String CLIENT_SUBJECT = "Appointment Confirmation!";
 public final static String CONTACT_SUBJECT = "New Question!";
 public final static String EMAIL_REGEX = "[a-zA-Z0-9_\\.\\+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-\\.]+";
+public final static String REMINDER_EMAIL_FORMAT = "We would like to remind you for your upcoming booking on %s at %s.";
 }
