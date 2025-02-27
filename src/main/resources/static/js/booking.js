@@ -33,7 +33,9 @@ $(document).ready(function() {
         .then(() => {
             flatpickr("#datepicker", {
                 firstDayOfWeek: 1,
-                dateFormat: "Y-m-d",
+                dateFormat: "Y-m-d", // Backend format (hidden)
+                altInput: true,
+                altFormat: "d-m-Y", // Display format (shown to the user)
                 minDate: new Date().fp_incr(1),
                 disable: [...Array.from(fullyBookedDates), ...Array.from(unavailableDates), disableWeekends],
                 locale: {

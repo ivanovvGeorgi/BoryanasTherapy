@@ -1,0 +1,61 @@
+/* Existing styles */
+.flatpickr-calendar {
+    background-color: white !important;
+}
+
+.flatpickr-day.selected {
+    background-color: #3498db !important;
+    color: white !important;
+}
+
+.flatpickr-input {
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.flatpickr-day.weekend {
+    color: red !important;
+}
+
+.flatpickr-day.today {
+    font-weight: bold !important;
+}
+
+/* New style for fully booked days */
+.flatpickr-day.fully-booked {
+    color: orange !important;
+}
+
+.flatpickr-day.fully-booked:hover {
+    cursor: not-allowed;
+}
+.flatpickr-input,
+.form-control.input {
+    width: 100%; /* Full width */
+    padding: 10px; /* Comfortable padding */
+    font-size: 16px; /* Larger, readable font */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    outline: none; /* Remove default outline */
+    height: auto; /* Allow height to grow */
+    min-height: 40px; /* Minimum height for small selections */
+    white-space: normal; /* Allow wrapping text */
+    overflow-y: auto; /* Scroll if dates overflow */
+    word-break: break-word; /* Break long lines if needed */
+}
+
+.flatpickr-input:focus,
+.form-control.input:focus {
+    border-color: #007bff; /* Highlight border on focus */
+    background-color: #ffffff; /* White background on focus */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Stronger shadow on focus */
+}
+
+.flatpickr-input::placeholder,
+.form-control.input::placeholder {
+    color: #aaa; /* Light grey placeholder */
+    font-style: italic;
+}
+

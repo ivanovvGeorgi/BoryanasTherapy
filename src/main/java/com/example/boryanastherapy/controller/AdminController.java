@@ -68,7 +68,7 @@ public class AdminController {
                 .thenComparing(Booking::getTime));
 
         // Format LocalDate manually
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         for (Booking booking : bookings) {
             String formattedDate = booking.getDate().format(formatter);
             booking.setFormattedDate(formattedDate); // Store the formatted date as a string

@@ -11,7 +11,7 @@
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <link rel="stylesheet" th:href="@{/css/custom-flatpickr.css}">
+  <link rel="stylesheet" th:href="@{/css/admin-flatpickr.css}">
 
 </head>
 
@@ -47,13 +47,21 @@
 
       // Append sorted dates to the list
       data.forEach(date => {
-        $("#unavailable-dates-list").append(`<li>${date}</li>`);
+        let formattedDate = new Date(date).toLocaleDateString("bg-BG", {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric"
+        });
+        $("#unavailable-dates-list").append(`<li>${formattedDate}</li>`);
       });
+
 
       // Initialize Flatpickr with disabled dates
       flatpickr("#admin-datepicker", {
         mode: "multiple",
-        dateFormat: "Y-m-d",
+        dateFormat: "Y-m-d", // Backend format (hidden)
+        altInput: true,
+        altFormat: "d-m-Y", // Display format (shown to the user)
         minDate: "today",
         defaultDate: data, // Preload unavailable dates
         firstDayOfWeek: 1,  // Monday as the first day of the week

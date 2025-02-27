@@ -21,7 +21,7 @@
       <!-- Loop through the new messages and display each message -->
       <li th:each="message : ${newMessages}" class="message-card">
         <div class="message-info">
-          <p><strong>Date:</strong> <span th:text="${message.date}"></span></p>
+          <p><strong>Date:</strong> <span th:text="${#temporals.format(message.getDate(), 'dd-MM-yyyy HH:mm')}"></span></p>
           <p><strong>Sender:</strong> <span th:text="${message.name}"></span></p>
           <p><strong>Message:</strong> <span th:text="${message.message}"></span></p>
           <form th:action="@{/admin/read/{id}(id=${message.id})}" method="post">
@@ -44,7 +44,7 @@
       <!-- Loop through the read messages and display each message -->
       <li th:each="message : ${readMessages}" class="message-card">
         <div class="message-info">
-          <p><strong>Date:</strong> <span th:text="${message.date}"></span></p>
+          <p><strong>Date:</strong> <span th:text="${#temporals.format(message.getDate(), 'dd-MM-yyyy HH:mm')}"></span></p>
           <p><strong>Sender:</strong> <span th:text="${message.name}"></span></p>
           <p><strong>Message:</strong> <span th:text="${message.message}"></span></p>
         </div>

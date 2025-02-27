@@ -22,7 +22,6 @@
     <li><a href="/about" th:text="#{about}">About me</a></li>
     <li><a href="/contact" th:text="#{contact}">Contact</a></li>
     <li><a href="/book" th:text="#{book}">Book an Appointment</a></li>
-    <li><a href="/test-book" th:text="#{test_book}">Test book</a></li>
 
     <!-- Admin Dropdown -->
     <li sec:authorize="hasRole('ADMIN')" class="dropdown">
@@ -30,7 +29,7 @@
       <div class="dropdown-content">
         <a href="/admin/dashboard" th:text="#{bookings}">Bookings</a>
         <a href="/admin/messages" th:text="#{messages}">Messages</a>
-        <a href="/admin/messages" th:text="#{calendar}">Calendar</a>
+        <a href="/admin/calendar" th:text="#{calendar}">Calendar</a>
         <a href="/logout" th:text="#{logout}">Logout</a>
       </div>
     </li>
