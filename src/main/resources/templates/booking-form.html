@@ -1,22 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="bg, en">
 <head th:replace="fragments/head">
     <title>Book a Session</title>
-    <style>
-        .available {
-            background-color: green;
-            color: white;
-        }
-        .booked {
-            background-color: yellow;
-            color: black;
-        }
-        .slot {
-            padding: 10px;
-            margin: 5px;
-            cursor: pointer;
-        }
-    </style>
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -39,7 +25,7 @@
 
 
 
-    <form th:action="@{/test-book}" th:object="${bookingDTO}" method="post">
+    <form th:action="@{/book}" th:object="${bookingDTO}" method="post">
         <div class="input_container">
 
             <!-- Name -->
