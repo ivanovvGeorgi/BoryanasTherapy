@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="bg, en">
+
+
 <head th:replace="fragments/head">
+    <meta charset="UTF-8">
     <title>Contact Me</title>
     <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
@@ -12,8 +15,8 @@
     <p>Feel free to reach out for any inquiries or appointments. I'll get back to you as soon as possible!</p>
 
     <div class="contact-container">
-        <form th:action="@{/send-message}" th:object="${messageDTO}" method="post" class="contact-form">
-            <div class="form-group">
+        <form th:action="@{/send-message}" th:object="${messageDTO}" method="post" class="contact-form" accept-charset="UTF-8">
+        <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" th:field="*{name}" required placeholder="Your Name">
                 <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></div>
