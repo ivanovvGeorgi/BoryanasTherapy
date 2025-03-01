@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="bg, en">
 
-
-<head th:replace="fragments/head">
+<head th:replace="~{fragments/head}">
     <meta charset="UTF-8">
     <title>Contact Me</title>
     <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
-<div th:replace="fragments/navbar :: body"></div>
+<div th:replace="~{fragments/navbar :: body}"></div>
 
 <section class="contact">
     <h2>Contact Me</h2>
@@ -50,6 +49,5 @@
     </div>
 </section>
 
-<div th:replace="fragments/footer :: body"></div>
-</body>
+<div th:replace="~{fragments/footer :: body}"></div></body>
 </html>

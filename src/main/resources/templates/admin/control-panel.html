@@ -1,16 +1,17 @@
 <!-- src/main/resources/templates/admin/control-panel.html -->
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="bg, en">
 <head>
   <title>Admin Control Panel</title>
   <link rel="stylesheet" th:href="@{/css/reset-css.css}">
   <link rel="stylesheet" th:href="@{/css/admin.css}">
   <link rel="stylesheet" th:href="@{/css/navbar.css}">
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
 </head>
 <body>
 
 <!-- Navbar Fragment -->
-<div th:replace="fragments/navbar :: body"></div>
+<div th:replace="~{fragments/navbar :: body}"></div>
 
 <!-- Main Content Area -->
 <div class="control-panel-container">
@@ -27,6 +28,5 @@
   </section>
 
 </div>
-
 </body>
 </html>

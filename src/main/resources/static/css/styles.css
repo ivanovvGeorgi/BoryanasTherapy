@@ -1,6 +1,7 @@
 
 /* General Styles */
 body {
+    min-height: 90%;
     margin-top: 120px;
     font-family: 'Lora', serif;
     color: #2c3e50;

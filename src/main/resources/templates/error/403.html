@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="bg, en">
 
-<head th:replace="fragments/head">
+<head th:replace="~{fragments/head}">
   <title>Access denied</title></head>
 <body class="error-page">
-<div th:replace="fragments/navbar :: body"></div>
+<div th:replace="~{fragments/navbar :: body}"></div>
 
 <div class="error-container">
   <h1>403</h1>
@@ -12,7 +12,7 @@
   <a href="/" class="btn-error">Return to Home</a>
 </div>
 
-<div th:replace="fragments/footer :: body"></div>
+<div th:replace="~{fragments/footer :: body}"></div>
 
 </body>
 </html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head">
+<html xmlns:th="http://www.thymeleaf.org" lang="bg, en">
+<head th:replace="~{fragments/head}">
 
-</head>
+    <title></title></head>
 <body>
-<div th:replace="fragments/navbar :: body"></div>
+<div th:replace="~{fragments/navbar :: body}"></div>
 
 <div class="parallax-section">
     <h1 class="parallax-title">About Me</h1>
@@ -42,6 +42,6 @@
 </section>
 
 <script th:src="@{/js/certificates.js}"></script>
-<div th:replace="fragments/footer :: body"></div>
+<div th:replace="~{fragments/footer :: body}"></div>
 </body>
 </html>

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="bg, en">
 <head>
   <title>Admin Dashboard</title>
   <link rel="stylesheet" th:href="@{/css/reset-css.css}">
   <link rel="stylesheet" th:href="@{/css/admin.css}">
   <link rel="stylesheet" th:href="@{/css/navbar.css}">
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
 </head>
 <body>
 <!-- Navbar Fragment -->
-<div th:replace="fragments/navbar :: body"></div>
+<div th:replace="~{fragments/navbar :: body}"></div>
 
 <!-- Main Content Area -->
 <div class="dashboard-container">
@@ -52,6 +53,5 @@
     </ul>
   </section>
 </div>
-
 </body>
 </html>

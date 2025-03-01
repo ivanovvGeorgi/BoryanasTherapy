@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="bg, en">
-<head th:replace="fragments/head">
+<head th:replace="~{fragments/head}">
     <title>Book a Session</title>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -9,7 +9,7 @@
 
 
 
-<div th:replace="fragments/navbar :: body"></div>
+<div th:replace="~{fragments/navbar :: body}"></div>
 
 <!-- Flatpickr CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -71,6 +71,6 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/js/booking.js"></script>
-<div th:replace="fragments/footer :: body"></div>
+<div th:replace="~{fragments/footer :: body}"></div>
 </body>
 </html>
