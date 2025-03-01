@@ -11,7 +11,7 @@
 
 <section class="contact">
     <h2>Contact Me</h2>
-    <p>Feel free to reach out for any inquiries or appointments. I'll get back to you as soon as possible!</p>
+    <p th:text="#{feel}">Feel free to reach out for any inquiries or appointments. I'll get back to you as soon as possible!</p>
 
     <div class="contact-container">
         <form th:action="@{/send-message}" th:object="${messageDTO}" method="post" class="contact-form" accept-charset="UTF-8">

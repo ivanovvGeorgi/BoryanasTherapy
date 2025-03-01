@@ -50,7 +50,10 @@ public class SecurityConfiguration {
                                 "/cookies",
                                 "/send-message",
                                 "/test-book",
-                                "/public/**"
+                                "/public/**",
+                                "/services/**",
+                                "/services",
+                                "/blog"
                         ).permitAll()
                         // Keep this as authenticated for security
                         .anyRequest().authenticated()

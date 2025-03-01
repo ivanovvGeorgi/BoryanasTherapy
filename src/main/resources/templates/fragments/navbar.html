@@ -20,6 +20,12 @@
   <ul class="nav-links" id="nav-links">
     <li><a href="/" th:text="#{home}">Home</a></li>
     <li><a href="/about" th:text="#{about}">About me</a></li>
+    <li class="dropdown"><a href="/services" class="dropbtn" th:text="#{services}">Services <span class="arrow">&#9662;</span></a>
+      <div class="dropdown-content">
+        <a href="/services/counselling" th:text="#{counselling}">Individual Counselling</a>
+        <a href="/services/vret" th:text="#{vret}">Virtual Reality Exposure Therapy</a>
+      </div></li>
+    <li><a href="/blog" th:text="#{blog}">Blog</a></li>
     <li><a href="/contact" th:text="#{contact}">Contact</a></li>
     <li class="nav-book"><a href="/book" th:text="#{book}">Book an Appointment</a></li>
 
