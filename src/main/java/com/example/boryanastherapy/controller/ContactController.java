@@ -12,8 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import static com.example.boryanastherapy.model.enums.Constants.CONTACT_SUBJECT;
-import static com.example.boryanastherapy.model.enums.Constants.OWNER_EMAIL;
+import static com.example.boryanastherapy.model.enums.Constants.*;
 
 @Controller
 public class ContactController {
@@ -41,11 +40,16 @@ public class ContactController {
         if (bindingResult.hasErrors()) {
             return "contact"; // Return to the form if there are errors
         }
+        //Show user email in message
+        messageDTO.setMessage(String.format(MESSAGE_FORMAT, messageDTO.getEmail(), messageDTO.getMessage()));
 
         Message message = MessageMapper.toEntity(messageDTO); // Use the mapper!
         this.messageService.saveMessage(message);
 
-        this.emailService.sendEmail(OWNER_EMAIL, CONTACT_SUBJECT, messageDTO.getMessage()); // Or message.getMessage()
+        this.emailService.sendEmail(
+                OWNER_EMAIL,
+                String.format(CONTACT_SUBJECT, message.getName()),
+                messageDTO.getMessage()); // Or message.getMessage()
 
         model.addAttribute("successMessage", "Thank you! Your message has been sent.");
         model.addAttribute("messageDTO", new MessageDTO()); //reset the form
