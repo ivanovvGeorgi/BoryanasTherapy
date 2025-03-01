@@ -46,6 +46,10 @@
     color: #000; /* Adjust the color as needed */
     font-weight: bold;
 }
+.nav-book{
+    background-color: #9fc6ee;
+    border-radius: 5px;
+}
 .nav-links a:hover{
     color: #2c3e50;
 

@@ -15,13 +15,31 @@ section {
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 .book-now-button-container{
-    margin-top: 10px;
+    margin-top: 40px;
 }
 .hero {
     background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('/images/snow.jpg') center/cover no-repeat;
     color: #ecf0f1;
-    padding: 200px 20px 150px 20px;
     animation: fadeIn 2s ease;
+    justify-content: center;
+    /* Remove fixed padding values */
+    /* padding: 200px 20px 150px 20px; */
+
+    /* Use padding as a percentage of the viewport height */
+    /* Adjust as needed */
+    /* Adjust as needed */
+    /* Keep horizontal padding fixed */
+    /* Keep horizontal padding fixed */
+    padding: 15vh 20px 10vh;
+
+    /* Other styles for the section */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    min-height: 90vh; /* Ensure the section takes up at least the full height of the viewport */
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+}
+.hero h1{
+    padding: 10px;
 }
 .about, .services, .testimonials, .contact-home {
     opacity: 0;
@@ -31,16 +49,66 @@ section {
     opacity: 1;
     transform: translateY(0);
 }
-.btn-primary {
-    background-color: #f39c12;
-    color: #fff;
-    padding: 10px 20px;
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.about-content {
+    width: 550px;
+    height: 850px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.about-content img{
+    border-radius: 1%;
+}
+
+.customer-review {
+    background-color: #f0f8ff; /* Light blue background */
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.vision-mission {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.vision, .mission {
+    width: 45%;
+    text-align: left;
+}
+
+.vision h3, .mission h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.buttons a {
+    display: inline-block;
+    padding: 12px 30px;
+    margin: 0 10px;
+    background-color: #008080; /* Teal color */
+    color: white;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.3s;
 }
-.btn-primary:hover {
-    background-color: #e67e22;
+
+.btn-primary {
+    background-color: #008080;
+    color: #fff;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.btn-primary:hover, .buttons a:hover{
+    background-color: #006d6d;
     transform: scale(1.05);
 }
 @keyframes fadeIn {
