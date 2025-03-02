@@ -98,13 +98,6 @@
     position: relative; /* For positioning the arrow */
 }
 
-/* Arrow styling */
-.arrow {
-    margin-left: 0;
-    font-size: 12px;
-    vertical-align: middle;
-    transition: transform 0.3s ease;
-}
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
@@ -123,7 +116,10 @@
     text-decoration: none;
     display: block;
 }
-
+.dropdown i.fas {
+    font-size: 14px;
+    vertical-align: middle;
+}
 /* Hover effect for links */
 .dropdown-content a:hover {
     background-color: #ddd;
@@ -134,15 +130,8 @@
     display: block;
 }
 
-
-/* Rotate the arrow when the dropdown content is shown */
-.dropdown:hover .arrow {
-    transform: rotate(180deg); /* Rotate arrow on hover */
-}
-
-/* Ensuring the arrow shows correctly when hovering */
-.dropdown .arrow {
-    transition: transform 0.3s ease-in-out;
+.services-dropdown {
+    font-size: 18px;
 }
 
 /*Language icons*/

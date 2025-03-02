@@ -1,7 +1,12 @@
 
 /* General Styles */
+body, html{
+    height: 100%;
+}
 body {
-    min-height: 90%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Make body at least the full viewport height */
     margin-top: 120px;
     font-family: 'Lora', serif;
     color: #2c3e50;
@@ -53,9 +58,11 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 20px;
     overflow: hidden; /* Clip overflow at the parent level */
 }
+
 .parent h2{
     padding: 15px;
 }
@@ -121,7 +128,7 @@ section {
 }
 
 .services-item {
-    width: 550px;
+    width: 90%;
     height: 750px;
     overflow: hidden;
     border-radius: 10px;
@@ -146,8 +153,7 @@ section {
     to { opacity: 1; }
 }
 /* Parallax Section */
-.parallax-section {
-    background-image: url('/images/sea.jpg'); /* Replace with your image */
+.parallax-section, .parallax-services {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -160,6 +166,13 @@ section {
     font-size: 36px;
     font-weight: bold;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+.parallax-section {
+    background-image: url('/images/sea.jpg'); /* Replace with your image */
+
+}
+.parallax-services{
+    background-image: url("/images/sea_waves.jpg");
 }
 
 /* About Me Section */
@@ -621,13 +634,25 @@ button.booking_button:active {
     background: linear-gradient(135deg, #2980b9, #1e90ff);
     transform: scale(1.05);
 }
+/*Confirmation Container*/
+.confirmation-container {
+    text-align: center;
+    padding: 40px; /* Reduce padding */
+    margin: 50px auto; /* Center the container with less margin */
+    max-width: 600px; /* Limit the width */
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
 
-.confirmation-container{
-    max-width: 1280px; /* Set a maximum width */
-    margin: 20px auto; /* Center the content */
-    background-color: #fff; /* White background for content area */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding-bottom: 60vh;
+.confirmation-container h1 {
+    font-size: 32px; /* Smaller font size */
+    margin-bottom: 20px; /* Reduce spacing */
+}
+
+.confirmation-container p {
+    font-size: 18px; /* Smaller paragraph font */
+    margin-bottom: 30px; /* Less bottom margin */
 }
 
 

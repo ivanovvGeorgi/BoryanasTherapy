@@ -11,18 +11,15 @@
 <div th:replace="~{fragments/navbar :: body}"></div>
 
 <div class="confirmation-container">
-    <h1>Booking Confirmed!</h1>
-    <div class="icon">
-        <i class="fas fa-check-circle"></i>
-    </div>
+    <h1>Booking Confirmed! <i class="fas fa-check-circle"></i></h1>
     <p class="message">Your booking has been successfully confirmed! An email with the details will be sent to you shortly.</p>
     <div class="book-now-button-container">
         <a href="/" class="btn-primary">Return to Homepage</a>
     </div>
 </div>
 
-<div th:replace="~{fragments/footer :: body}"></div>
 
+<div th:replace="~{fragments/footer :: body}"></div>
 </body>
 
 </html>
