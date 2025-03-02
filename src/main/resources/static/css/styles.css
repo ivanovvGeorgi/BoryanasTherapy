@@ -198,7 +198,7 @@ section {
 /* Improved Booking Form Input Styling */
 .booking-container {
     max-width: 1280px; /* Set a maximum width */
-    margin: 15% auto 15% auto; /* Center the content */
+    margin: 1% auto 15% auto; /* Center the content */
     padding: 20px;
     background-color: #fff; /* White background for content area */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -572,14 +572,61 @@ button.booking_button:active {
 }
 
 /* Contact Details Styles */
-.contact-details {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 350px;
-    width: 100%;
+.contact-container {
+    display: flex;
+    justify-content: center;  /* Centers the columns horizontally */
+    align-items: center;      /* Centers the columns vertically */
+    gap: 20px;
+    max-width: 1200px;         /* Optional: to limit the max width */
+    margin: 0 auto;            /* Ensures it's centered within the page */
+    padding: 20px;
 }
+
+.left-column, .right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content inside each column */
+}
+
+.left-column {
+    max-width: 500px; /* Optional: you can limit the form width */
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px; /* Optional: you can limit the contact/map width */
+}
+
+.contact-details,
+.map-container {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%; /* Ensures they fill their container */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .left-column, .right-column {
+        max-width: none;
+        width: 100%;
+    }
+}
+
 
 .contact-details h3 {
     font-size: 28px;
@@ -592,6 +639,7 @@ button.booking_button:active {
     color: #666;
     margin-bottom: 10px;
 }
+
 /* CSS Enhancements for Error Pages */
 .error-page {
     display: flex;
