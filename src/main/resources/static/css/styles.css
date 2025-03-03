@@ -278,19 +278,26 @@ section {
     font-size: 1.5em; /* Larger icon */
     cursor: pointer;
     color: #007bff; /* Icon color */
-    transition: transform 0.2s ease; /* Animation for scaling */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+}
+
+.faq-toggle i {
+    transition: transform 0.3s ease; /* Smooth rotation of the icon */
 }
 
 .faq-toggle:hover {
     transform: scale(1.1); /* Hover effect to make the icon slightly larger */
 }
+
 .faq-answer {
     padding: 10px;
-    display: none; /* Initially hide the answer */
-    opacity: 0; /* Make it invisible initially */
+    display: none; /* Initially hidden */
+    opacity: 0; /* Invisible initially */
     transform: translateY(20px); /* Start from the bottom */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Add transition for both opacity and translation */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
+
+
 
 @keyframes fadeIn {
     from {
