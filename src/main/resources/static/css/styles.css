@@ -67,12 +67,14 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: stretch; /* This will now work correctly */
     gap: 20px;
-    overflow: hidden; /* Clip overflow at the parent level */
+    overflow: hidden;
+    flex-direction: row;
+    min-height: 400px; /* Add a minimum height */
 }
 
-.parent h2{
+.section-head{
     padding: 15px;
     color: #0b3d83;
     font-family: "Great Vibes", cursive;
@@ -84,7 +86,6 @@ section {
 
 .about-content, .services-content {
     width: 550px;
-    height: 700px;
     overflow: hidden;
     border-radius: 10px;
 }
@@ -114,6 +115,7 @@ section {
     justify-content: space-around;
     margin-bottom: 45px;
     margin-top: 30px;
+    align-items: stretch;
 }
 
 .vision, .mission {
@@ -126,15 +128,18 @@ section {
     margin-bottom: 20px;
     color: #355775;
 }
-.home-logo:hover{
-    transform: scale(1.05);
+
+/* Container for buttons */
+.button-container {
+    text-align: center;
+    margin-top: 20px; /* Add some space between content and buttons */
 }
 
 .buttons a {
     display: inline-block;
     padding: 12px 30px;
     margin: 0 10px;
-    background-color: #008080; /* Teal color */
+    background-color: #008080;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -149,14 +154,48 @@ section {
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.3s;
 }
-.btn-primary:hover, .buttons a:hover{
+
+.btn-primary:hover, .buttons a:hover {
     background-color: #006d6d;
     transform: scale(1.05);
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .vision-mission {
+        flex-direction: column; /* Stack vision and mission vertically */
+        align-items: center; /* Center them horizontally */
+    }
+
+    .vision, .mission {
+        width: 90%; /* Take up full width */
+        text-align: center; /* Center text */
+        margin-bottom: 20px; /* Add space between sections */
+    }
+
+    .parent {
+        flex-direction: column; /* Stack image and content vertically */
+        align-items: center;
+    }
+
+    .about-content {
+        width: 90%; /* Take up full width */
+        height: auto; /* Adjust height automatically */
+        text-align: center;
+    }
+
+    .about-content:nth-child(1) {
+        width: 80%; /* Adjust image width */
+    }
+
+    .about-content:nth-child(2) {
+        width: 90%;
+    }
+}
+
 .services-item {
     width: 90%;
-    height: 750px;
+    height: 75vh;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
