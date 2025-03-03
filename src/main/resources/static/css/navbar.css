@@ -15,8 +15,8 @@
 
 /* Logo */
 #navbar .logo {
-    max-height: 100px;
-    max-width: 100px;
+    max-height: 125px;
+    max-width: 125px;
     border-radius: 100%;
     transition: transform 0.3s ease-in-out;
 }

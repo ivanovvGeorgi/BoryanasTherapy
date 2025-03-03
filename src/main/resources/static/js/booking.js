@@ -27,6 +27,31 @@ $(document).ready(function() {
                 console.error("Error fetching unavailable dates:", error);
             });
     }
+    // Function to get the user's preferred language
+    function getUserLanguage() {
+        let lang = "bg"; // Default to Bulgarian
+
+        // 1. Check for URL parameter (e.g., ?lang=en)
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has("lang")) {
+            lang = urlParams.get("lang");
+        }
+
+        return lang;
+    }
+
+    // Function to load the Flatpickr locale
+    function loadFlatpickrLocale(lang) {
+        if (lang !== "en") { // Only load if not English (default)
+            const script = document.createElement("script");
+            script.src = `https://cdn.jsdelivr.net/npm/flatpickr@latest/dist/l10n/${lang}.js`;
+            document.head.appendChild(script);
+        }
+    }
+
+    // Get user language and load locale
+    const userLang = getUserLanguage();
+    loadFlatpickrLocale(userLang);
 
     // Fetch fully booked and unavailable dates before initializing Flatpickr
     Promise.all([fetchFullyBookedDates(), fetchUnavailableDates()])
@@ -39,6 +64,7 @@ $(document).ready(function() {
                 minDate: new Date().fp_incr(1),
                 disable: [...Array.from(fullyBookedDates), ...Array.from(unavailableDates), disableWeekends],
                 locale: {
+                    ...flatpickr.l10ns[userLang],
                     firstDayOfWeek: 1,
                 },
                 onDayCreate: function(dObj, dStr, fp, dayElem) {
