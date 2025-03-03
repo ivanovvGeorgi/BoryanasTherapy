@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="bg, en">
 <head th:replace="~{fragments/head}">
-
-  <title></title></head>
+  <title th:text="#{counselling}">Individual Counselling</title>
+</head>
 <body>
 <div th:replace="~{fragments/navbar :: body}"></div>
 
-<div class="parallax-section">
-  <h1 class="parallax-title">About Me</h1>
+<div class="parallax-section-individual">
+  <h1 class="parallax-title" th:text="#{counselling}">Individual Counselling</h1>
 </div>
 
-<!-- Content Section -->
 <section class="about-me">
   <div class="content">
-    <h2>Welcome to My Therapy Practice</h2>
+    <h2>Understanding Individual Counselling</h2>
     <p>
-      I am a certified psychologist with years of experience helping people navigate
-      life's challenges. My approach focuses on providing a safe and welcoming
-      environment where we can work together toward your personal growth and healing.
+      Individual counselling provides a safe and confidential space for you to explore your thoughts, feelings, and behaviors with a trained professional. It's an opportunity to gain insight into your challenges, develop coping strategies, and work towards positive change.
     </p>
     <p>
-      Whether you're dealing with anxiety, depression, or just need someone to talk to,
-      I'm here to support you on your journey.
+      Whether you're struggling with anxiety, depression, relationship issues, grief, or other life challenges, individual counselling can offer support and guidance.
     </p>
-  </div>
-</section>
-<!-- Certificates Section -->
-<section class="certificates">
-  <h2>My Certifications</h2>
-  <div class="certificate-gallery">
-    <div class="certificate-item">
-      <img src="/images/certificate-1.png" alt="Certificate 1" class="certificate-img">
-    </div>
-    <div class="certificate-item">
-      <img src="/images/certificate-2.jpg" alt="Certificate 2" class="certificate-img">
-    </div>
-    <div class="certificate-item">
-      <img src="/images/certificate-3.png" alt="Certificate 3" class="certificate-img">
+    <h2>How I Can Help</h2>
+    <p>
+      My approach to individual counselling is client-centered and collaborative. I believe in creating a strong therapeutic relationship built on trust, empathy, and understanding. I will work with you to:
+    </p>
+    <ul>
+      <li>Identify and understand your concerns</li>
+      <li>Develop coping mechanisms and strategies</li>
+      <li>Enhance self-awareness and personal growth</li>
+      <li>Improve your overall well-being</li>
+    </ul>
+    <p>
+      I use evidence-based techniques tailored to your specific needs and goals. Some of the approaches I draw upon include:
+    </p>
+    <ul>
+      <li>Cognitive Behavioral Therapy (CBT)</li>
+      <li>Mindfulness-Based Therapies</li>
+      <li>Solution-Focused Therapy</li>
+    </ul>
+    <h2>Taking the First Step</h2>
+    <p>
+      If you're considering individual counselling, I encourage you to reach out. We can schedule a consultation to discuss your needs and how I can help.
+    </p>
+    <div class="book-now-button-container">
+      <a href="/book" class="btn-primary" th:text="#{book}">Book an Appointment</a>
     </div>
   </div>
 </section>
 
-<script th:src="@{/js/certificates.js}"></script>
 <div th:replace="~{fragments/footer :: body}"></div>
 </body>
 </html>

@@ -12,17 +12,21 @@ body {
     background-color: #f9f9f9;
     font-size: 20px;
 }
-body p{
+
+body p {
     color: #6c7073;
 }
+
 section {
     padding: 60px 20px;
     text-align: center;
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
-.book-now-button-container{
+
+.book-now-button-container {
     margin-top: 40px;
 }
+
 .hero {
     background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('/images/snow.jpg') center/cover no-repeat;
     color: #ecf0f1;
@@ -44,25 +48,31 @@ section {
     display: flex;
     flex-direction: column; /* Align items vertically */
 }
-.hero p{
+
+.hero p {
     color: #ecf0f1;
 }
-.hero h1{
+
+.hero h1 {
     font-family: "Great Vibes", cursive;
     font-size: 80px;
     padding: 10px;
 }
-.about, .services, .testimonials, .contact-home {
+
+.about, .services, .faq, .contact-home {
     opacity: 0;
     transform: translateY(50px);
 }
-.about h2, .services h2, .testimonials h2, .contact-home h2{
+
+.about h2, .services h2, .faq h2, .contact-home h2 {
     font-size: 32px;
 }
+
 .fade-in {
     opacity: 1;
     transform: translateY(0);
 }
+
 .parent {
     display: flex;
     flex-wrap: wrap;
@@ -74,12 +84,12 @@ section {
     min-height: 400px; /* Add a minimum height */
 }
 
-.section-head{
+.section-head {
     padding: 15px;
     color: #0b3d83;
     font-family: "Great Vibes", cursive;
     font-weight: 400;
-    font-style:normal;
+    font-style: normal;
 
 }
 
@@ -89,17 +99,21 @@ section {
     overflow: hidden;
     border-radius: 10px;
 }
-.about-content img{
+
+.about-content img {
     border-radius: 1%;
     transition: background-color 0.3s, transform 0.3s;
 }
-.about-content:nth-child(1){
+
+.about-content:nth-child(1) {
     width: 25%;
 }
-.about-content:nth-child(2){
+
+.about-content:nth-child(2) {
     width: 35%;
 }
-.about-content-p{
+
+.about-content-p {
     padding-bottom: 30px;
     border-bottom: #00000029 solid 1px;
 }
@@ -202,6 +216,7 @@ section {
     transition: transform 0.3s ease;
     background-size: cover;
 }
+
 /* First Item: */
 .services-content:nth-child(1) .services-item {
     background-image: url('/images/flower.jpg');
@@ -211,15 +226,83 @@ section {
 .services-content:nth-child(2) .services-item {
     background-image: url('/images/stairway.jpg');
 }
-.services-item:hover{
+
+.services-item:hover {
     transform: scale(1.05);
 }
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/*FAQ*/
+
+.faq-section {
+    background-color: #f0f0f0; /* Light background */
+    padding: 40px;
+    font-family: sans-serif;
 }
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.profile-images img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.faq-list {
+    border-top: 1px solid #ddd;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+.faq-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5em; /* Larger icon */
+    cursor: pointer;
+    color: #007bff; /* Icon color */
+    transition: transform 0.2s ease; /* Animation for scaling */
+}
+
+.faq-toggle:hover {
+    transform: scale(1.1); /* Hover effect to make the icon slightly larger */
+}
+.faq-answer {
+    padding: 10px;
+    display: none; /* Initially hide the answer */
+    opacity: 0; /* Make it invisible initially */
+    transform: translateY(20px); /* Start from the bottom */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Add transition for both opacity and translation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* Parallax Section */
-.parallax-section, .parallax-services {
+.parallax-section, .parallax-services, .parallax-section-vr, .parallax-section-individual {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -233,12 +316,25 @@ section {
     font-weight: bold;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
 }
+
 .parallax-section {
     background-image: url('/images/sea.jpg'); /* Replace with your image */
 
 }
-.parallax-services{
+
+.parallax-services {
     background-image: url("/images/sea_waves.jpg");
+
+}
+
+.parallax-section-vr {
+    background-image: url("/images/vr_therapy.jpg");
+    height: 60vh;
+}
+
+.parallax-section-individual {
+    background-image: url("/images/individual_therapy.jpg");
+    height: 60vh;
 }
 
 /* About Me Section */
@@ -263,7 +359,6 @@ section {
 }
 
 
-
 /* Improved Booking Form Input Styling */
 .booking-container {
     max-width: 1280px; /* Set a maximum width */
@@ -279,12 +374,14 @@ section {
     flex-direction: column;
     gap: 15px;
 }
+
 .booking_label {
     text-align: left;
     margin-bottom: 5px;
     font-weight: 500;
     color: #2c3e50;
 }
+
 .booking_input input {
     width: 100%;
     padding: 12px 15px;
@@ -294,16 +391,19 @@ section {
     box-sizing: border-box;
     transition: border-color 0.3s;
 }
+
 .booking_input input:hover {
     border-color: #6c5ce7;
     outline: none;
     box-shadow: 0 0 5px rgba(108, 92, 231, 0.5);
 }
+
 .booking_input input:focus {
     border-color: #6c5ce7;
     outline: none;
     box-shadow: 0 0 5px rgba(108, 92, 231, 0.5);
 }
+
 button.booking_button {
     background-color: #2563eb; /* blue-600 */
     color: white;
@@ -325,10 +425,12 @@ button.booking_button:hover {
 button.booking_button:active {
     transform: scale(0.95);
 }
-#time-slots{
+
+#time-slots {
     margin: 16px 16px 16px -2px;
 
 }
+
 .booking-wrapper {
     display: flex;
     align-items: flex-start;
@@ -372,35 +474,42 @@ button.booking_button:active {
     margin: 5px 0;
     text-align: center;
 }
+
 /*Legal sections*/
-.legal-header{
+.legal-header {
     text-align: center;
     padding: 50px;
-    font-size: 24px;}
-.legal-section{
+    font-size: 24px;
+}
+
+.legal-section {
     margin-left: 5%;
     padding: 60px 20px;
     text-align: left;
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-.roman-ul{
+.roman-ul {
     list-style-type: upper-roman;
     margin-left: 20px;
 }
-.numbers-ol{
+
+.numbers-ol {
     list-style-type: decimal;
     margin-left: 40px;
 }
+
 .circle-list {
     list-style-type: disc;
     margin-left: 60px;
 }
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .input_container {
         gap: 10px;
     }
+
     .booking_input input {
         font-size: 14px;
         padding: 10px 12px;
@@ -422,8 +531,6 @@ button.booking_button:active {
         font-size: 14px;
     }
 }
-
-
 
 
 /* Green for available slots */
@@ -453,8 +560,9 @@ button.booking_button:active {
     pointer-events: none;
     opacity: 0.6;
 }
+
 .slot {
-    display: inline-block;  /* Makes slots appear side by side */
+    display: inline-block; /* Makes slots appear side by side */
     padding: 10px;
     margin: 5px;
     cursor: pointer;
@@ -464,12 +572,14 @@ button.booking_button:active {
     width: 100px; /* Adjust width as needed */
     font-weight: bold;
 }
+
 .error {
     padding: 10px;
     color: red;
     font-size: 14px;
     display: block;
 }
+
 /* Certificates Section */
 .certificates {
     text-align: center;
@@ -538,9 +648,9 @@ button.booking_button:active {
 
 /* Image inside the lightbox */
 .lightbox img {
-    max-width: 90%;  /* Adjust image width to fit screen */
+    max-width: 90%; /* Adjust image width to fit screen */
     max-height: 90%; /* Adjust image height to fit screen */
-    object-fit: contain;  /* Maintain aspect ratio */
+    object-fit: contain; /* Maintain aspect ratio */
     border-radius: 10px;
 }
 
@@ -609,12 +719,13 @@ button.booking_button:active {
     transition: border-color 0.3s;
 }
 
-.contact-form input:hover, .contact-form textarea:hover{
+.contact-form input:hover, .contact-form textarea:hover {
     border-color: #6c5ce7;
     outline: none;
     box-shadow: 0 0 5px rgba(108, 92, 231, 0.5);
 }
-.contact-form input:focus, .contact-form textarea:focus{
+
+.contact-form input:focus, .contact-form textarea:focus {
     border-color: #6c5ce7;
     outline: none;
     box-shadow: 0 0 5px rgba(108, 92, 231, 0.5);
@@ -643,11 +754,11 @@ button.booking_button:active {
 /* Contact Details Styles */
 .contact-container {
     display: flex;
-    justify-content: center;  /* Centers the columns horizontally */
-    align-items: center;      /* Centers the columns vertically */
+    justify-content: center; /* Centers the columns horizontally */
+    align-items: center; /* Centers the columns vertically */
     gap: 20px;
-    max-width: 1200px;         /* Optional: to limit the max width */
-    margin: 0 auto;            /* Ensures it's centered within the page */
+    max-width: 1200px; /* Optional: to limit the max width */
+    margin: 0 auto; /* Ensures it's centered within the page */
     padding: 20px;
 }
 
@@ -720,21 +831,25 @@ button.booking_button:active {
     text-align: center;
     color: #2c3e50;
 }
+
 .error-container {
     background: rgba(255, 255, 255, 0.9);
     padding: 30px 50px;
     border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
 .error-container h1 {
     font-size: 100px;
     color: #e74c3c;
     margin-bottom: 20px;
 }
+
 .error-container p {
     font-size: 24px;
     margin-bottom: 20px;
 }
+
 .btn-error {
     background: linear-gradient(135deg, #3498db, #2980b9);
     color: #fff;
@@ -744,10 +859,12 @@ button.booking_button:active {
     font-size: 18px;
     transition: background 0.3s, transform 0.3s;
 }
+
 .btn-error:hover {
     background: linear-gradient(135deg, #2980b9, #1e90ff);
     transform: scale(1.05);
 }
+
 /*Confirmation Container*/
 .confirmation-container {
     text-align: center;
@@ -768,6 +885,7 @@ button.booking_button:active {
     font-size: 18px; /* Smaller paragraph font */
     margin-bottom: 30px; /* Less bottom margin */
 }
+
 .contact-details i {
     font-size: 0.8em; /* Adjust size as needed */
     margin-right: 0.5vh;

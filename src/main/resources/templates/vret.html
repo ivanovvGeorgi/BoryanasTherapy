@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="bg, en">
 <head th:replace="~{fragments/head}">
-
-  <title></title></head>
+  <title th:text="#{vret}">Virtual Reality Exposure Therapy</title>
+</head>
 <body>
 <div th:replace="~{fragments/navbar :: body}"></div>
 
-<div class="parallax-section">
-  <h1 class="parallax-title">About Me</h1>
+<div class="parallax-section-vr">
+  <h1 class="parallax-title" th:text="#{vret}">Virtual Reality Exposure Therapy</h1>
 </div>
 
-<!-- Content Section -->
 <section class="about-me">
   <div class="content">
-    <h2>Welcome to My Therapy Practice</h2>
+    <h2>Exploring Virtual Reality Exposure Therapy (VRET)</h2>
     <p>
-      I am a certified psychologist with years of experience helping people navigate
-      life's challenges. My approach focuses on providing a safe and welcoming
-      environment where we can work together toward your personal growth and healing.
+      Virtual Reality Exposure Therapy (VRET) is an innovative approach to treating anxiety disorders and phobias. It uses immersive virtual reality technology to create realistic simulations of feared situations, allowing you to confront your anxieties in a safe and controlled environment.
     </p>
     <p>
-      Whether you're dealing with anxiety, depression, or just need someone to talk to,
-      I'm here to support you on your journey.
+      VRET offers a powerful alternative to traditional exposure therapy, providing a more engaging and interactive experience. It can be particularly helpful for individuals who find it difficult to imagine or confront their fears in real-life settings.
     </p>
-  </div>
-</section>
-<!-- Certificates Section -->
-<section class="certificates">
-  <h2>My Certifications</h2>
-  <div class="certificate-gallery">
-    <div class="certificate-item">
-      <img src="/images/certificate-1.png" alt="Certificate 1" class="certificate-img">
-    </div>
-    <div class="certificate-item">
-      <img src="/images/certificate-2.jpg" alt="Certificate 2" class="certificate-img">
-    </div>
-    <div class="certificate-item">
-      <img src="/images/certificate-3.png" alt="Certificate 3" class="certificate-img">
+    <h2>How VRET Works</h2>
+    <p>
+      During VRET sessions, you'll wear a VR headset that immerses you in a computer-generated environment tailored to your specific fears. These simulations can range from public speaking and social interactions to heights, flying, and specific phobias like spiders or enclosed spaces.
+    </p>
+    <p>
+      With the guidance of a therapist, you'll gradually confront these virtual scenarios, allowing you to experience and manage your anxiety in a controlled setting. The therapist can adjust the intensity and difficulty of the simulations to match your progress and comfort level.
+    </p>
+    <h2>Benefits of VRET</h2>
+    <ul>
+      <li>Safe and Controlled Environment</li>
+      <li>Highly Immersive and Engaging</li>
+      <li>Personalized and Tailored to Your Needs</li>
+      <li>Effective for a Variety of Anxiety Disorders</li>
+    </ul>
+    <h2>Is VRET Right for You?</h2>
+    <p>
+      If you're struggling with anxiety or phobias and are interested in exploring VRET, I encourage you to reach out. We can discuss your specific needs and determine if VRET is a suitable treatment option for you.
+    </p>
+    <div class="book-now-button-container">
+      <a href="/book" class="btn-primary" th:text="#{book}">Book an Appointment</a>
     </div>
   </div>
 </section>
 
-<script th:src="@{/js/certificates.js}"></script>
 <div th:replace="~{fragments/footer :: body}"></div>
 </body>
 </html>
