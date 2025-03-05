@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.cdnfonts.com/css/miama-nueva');
+
 
 /* General Styles */
 body {
@@ -54,9 +56,10 @@ section {
 }
 
 .hero h1 {
-    font-family: "Great Vibes", cursive;
+    font-family: "Miama Nueva", sans-serif;
     font-size: 80px;
     padding: 10px;
+    margin-bottom: 10vh;
 }
 
 .about, .services, .faq, .contact-home {
@@ -87,7 +90,7 @@ section {
 .section-head {
     padding: 15px;
     color: #0b3d83;
-    font-family: "Great Vibes", cursive;
+    font-family: "Miama Nueva", sans-serif;
     font-weight: 400;
     font-style: normal;
 
@@ -104,7 +107,9 @@ section {
     border-radius: 1%;
     transition: background-color 0.3s, transform 0.3s;
 }
-
+.about-content img:hover {
+    transform: scale(1.05);
+}
 .about-content:nth-child(1) {
     width: 25%;
 }
@@ -152,11 +157,12 @@ section {
 .buttons a {
     display: inline-block;
     padding: 12px 30px;
-    margin: 0 10px;
-    background-color: #008080;
+    margin: 10px 10px;
+    background-color: #5984a7;
     color: white;
     text-decoration: none;
     border-radius: 5px;
+
     transition: background-color 0.3s, transform 0.3s;
 }
 
@@ -172,6 +178,9 @@ section {
 .btn-primary:hover, .buttons a:hover {
     background-color: #006d6d;
     transform: scale(1.05);
+}
+.services h2{
+    margin-bottom: 20px;
 }
 
 /* Responsive adjustments */
@@ -209,7 +218,7 @@ section {
 
 .services-item {
     width: 90%;
-    height: 75vh;
+    height: 60vh;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -296,6 +305,7 @@ section {
     transform: translateY(20px); /* Start from the bottom */
     transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
+/*Therapy Section*/
 
 
 

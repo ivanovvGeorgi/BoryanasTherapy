@@ -26,8 +26,9 @@ public class BookingReminderService {
         this.bookingRepository = bookingRepository;
     }
 
-    @Scheduled(cron = "0 0 9 * * ?") // Runs every day at 9 AM
+    @Scheduled(cron = "0 30 8 * * *") // Runs every day at 8:30 AM
     public void sendReminderEmails() {
+        System.out.println("Sending email");
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime targetTime = now.plusHours(24);
 
@@ -36,7 +37,10 @@ public class BookingReminderService {
         LocalTime targetTimeOfDay = targetTime.toLocalTime();
 
         // Find bookings that match the exact date and time (24 hours from now)
-        List<Booking> upcomingBookings = bookingRepository.findBookingsByExactDateAndTime(targetDate, targetTimeOfDay);
+        List<Booking> upcomingBookings = bookingRepository.findBookingsWithin24Hours(targetDate, // Today
+                targetTimeOfDay, // Current time
+                targetDate.plusDays(1), // Tomorrow
+                targetTimeOfDay); // Target time tomorrow);
 
         for (Booking booking : upcomingBookings) {
             sendReminderEmail(booking);
@@ -52,6 +56,6 @@ public class BookingReminderService {
         emailService.sendEmail(
                 to,
                 subject,
-                String.format(REMINDER_EMAIL_FORMAT, booking.getDate(), booking.getDate()));
+                String.format(REMINDER_EMAIL_FORMAT, booking.getDate(), booking.getTime()));
     }
 }

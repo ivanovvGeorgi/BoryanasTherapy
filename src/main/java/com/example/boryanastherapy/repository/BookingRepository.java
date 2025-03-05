@@ -25,6 +25,10 @@ public interface BookingRepository extends JpaRepository<Booking, Long> {
     @Query("SELECT DISTINCT b.date FROM Booking b")
     List<LocalDate> findBookedDates();
 
-    @Query("SELECT b FROM Booking b WHERE b.date = :date AND b.time = :time")
-    List<Booking> findBookingsByExactDateAndTime(@Param("date") LocalDate date, @Param("time") LocalTime time);
+    @Query("SELECT b FROM Booking b WHERE (b.date = :today AND b.time > :currentTime) OR (b.date = :tomorrow AND b.time <= :targetTimeOfDay)")
+    List<Booking> findBookingsWithin24Hours(
+            @Param("today") LocalDate today,
+            @Param("currentTime") LocalTime currentTime,
+            @Param("tomorrow") LocalDate tomorrow,
+            @Param("targetTimeOfDay") LocalTime targetTimeOfDay);
 }
