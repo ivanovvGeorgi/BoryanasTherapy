@@ -28,7 +28,6 @@ public class BookingReminderService {
 
     @Scheduled(cron = "0 30 8 * * *") // Runs every day at 8:30 AM
     public void sendReminderEmails() {
-        System.out.println("Sending email");
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime targetTime = now.plusHours(24);
 

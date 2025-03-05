@@ -242,9 +242,13 @@ section {
 /*FAQ*/
 
 .faq-section {
-    background-color: #f0f0f0; /* Light background */
+    background-image: url("/images/snow.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     padding: 40px;
     font-family: sans-serif;
+    transition: height 0.5s ease-in-out; /* Add the transition */
 }
 
 .faq-container {
@@ -303,7 +307,7 @@ section {
     display: none; /* Initially hidden */
     opacity: 0; /* Invisible initially */
     transform: translateY(20px); /* Start from the bottom */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    transition: height 0.3s ease-in-out;
 }
 /*Therapy Section*/
 
