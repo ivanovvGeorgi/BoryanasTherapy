@@ -29,7 +29,6 @@ spring:
     username: ${MYSQL_USER:root}
     password: ${MYSQL_PASSWORD:1234}
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   mail:
     host: smtp.gmail.com
     port: 587

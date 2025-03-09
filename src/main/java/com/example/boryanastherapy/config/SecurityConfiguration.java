@@ -27,6 +27,7 @@ public class SecurityConfiguration {
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                         // Admin pages require ADMIN role
                         .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/admin/articles/**").hasRole("ADMIN")
                         // Error paths
                         .requestMatchers(
                                 new AntPathRequestMatcher("/error/**"),

@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     answer.style.display = 'none';
                 }, 300); // Match the transition duration for opacity/transform
+
             } else {
                 // If not visible, show it with animation
                 answer.style.display = 'block';

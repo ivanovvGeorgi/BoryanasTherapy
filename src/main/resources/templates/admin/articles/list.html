@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en, bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Articles List</title>
+</head>
+<body>
+<h1>Admin Articles</h1>
+<a href="/admin/articles/create">Create New Article</a>
+<a href="/logout">Logout</a>
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="article : ${articles}">
+        <td th:text="${article.title}"></td>
+        <td th:text="${article.createdAt}"></td>
+        <td th:text="${article.updatedAt}"></td>
+        <td>
+            <a th:href="@{/admin/articles/edit/{id}(id=${article.id})}">Edit</a>
+            <form th:action="@{/admin/articles/delete/{id}(id=${article.id})}" method="post" style="display:inline;">
+                <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
