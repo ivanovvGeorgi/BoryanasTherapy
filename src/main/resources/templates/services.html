@@ -1,51 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="bg, en">
 <head th:replace="~{fragments/head}">
-
-    <title></title></head>
+    <title th:text="#{services.title}"></title>
+</head>
 <body>
 <div th:replace="~{fragments/navbar :: body}"></div>
 
 <div class="parallax-services">
-    <h1 class="parallax-title">Services</h1>
+    <h1 class="parallax-title" th:text="#{services.parallaxTitle}"></h1>
 </div>
 
-<!-- Content Section -->
 <section class="services">
     <div class="parent">
         <div class="services-content">
-            <h2>Individual Therapy</h2>
-            <a href="/services/counselling">
+            <h2 th:text="#{services.individualTherapyTitle}"></h2>
+            <a th:href="@{/services/counselling}">
                 <div class="services-item">
-                    <p>My individual therapy is:</p>
-                    <p>1. Finding the problem</p>
-                    <p>2. Fixing the problem</p>
-                    <p>3. Profit!</p>
+                    <p th:text="#{services.individualTherapyDescription}"></p>
+                    <p th:text="#{services.individualTherapyStep1}"></p>
+                    <p th:text="#{services.individualTherapyStep2}"></p>
+                    <p th:text="#{services.individualTherapyStep3}"></p>
                 </div>
             </a>
         </div>
         <div class="services-content">
-            <h2>VR Therapy</h2>
-            <a href="/services/vret">
+            <h2 th:text="#{services.vrTherapyTitle}"></h2>
+            <a th:href="@{/services/vret}">
                 <div class="services-item">
-                    <p>VR will make you face your hidden fears!</p>
+                    <p th:text="#{services.vrTherapyDescription}"></p>
                 </div>
             </a>
-        </div>
-    </div>
-</section>
-<!-- Certificates Section -->
-<section class="certificates">
-    <h2>My Certifications</h2>
-    <div class="certificate-gallery">
-        <div class="certificate-item">
-            <img src="/images/certificate-1.png" alt="Certificate 1" class="certificate-img">
-        </div>
-        <div class="certificate-item">
-            <img src="/images/certificate-2.jpg" alt="Certificate 2" class="certificate-img">
-        </div>
-        <div class="certificate-item">
-            <img src="/images/certificate-3.png" alt="Certificate 3" class="certificate-img">
         </div>
     </div>
 </section>
@@ -53,6 +37,5 @@
 <script th:src="@{/js/certificates.js}"></script>
 <div th:replace="~{fragments/footer :: body}"></div>
 <script src="/js/homeScript.js"></script>
-
 </body>
 </html>

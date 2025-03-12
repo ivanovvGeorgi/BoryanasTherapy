@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en, bg">
 <head th:replace="~{fragments/head}">
-    <title></title></head>
+    <title></title>
+</head>
 <body>
 <div th:replace="~{fragments/navbar :: body}"></div>
 <section class="hero">
-    <h1>Welcome to Boryana's Therapy</h1>
-    <p>Your journey to inner peace begins here</p>
-    <p class="book-now-button-container"><a href="/book" class="btn-primary" th:text="#{book}">Book an Appointment</a></p>
+    <h1 th:text="#{welcome}"></h1>
+    <p th:text="#{journey}"></p>
+    <p class="book-now-button-container"><a href="/book" class="btn-primary" th:text="#{book}"></a></p>
 </section>
 
 <section class="about">
@@ -16,26 +17,24 @@
             <a href="/about"><img src="/images/penguin.jpg" alt="logo" class="home-logo"></a>
         </div>
         <div class="about-content">
-            <h2 class="section-head">ЗА МЕН</h2>
-            <p class="about-content-p">
-                Аз съм Боряна Зафирова и съм дипломиран клиничен психолог. Вярвам, че всеки човек носи в себе си силата да се справи с предизвикателствата, а моята роля е да създам подкрепящо пространство, в което всеки може да се почувства разбран, приет и подкрепен в своя личен път към промяна.
-            </p>
+            <h2 class="section-head" th:text="#{aboutMe}"></h2>
+            <p class="about-content-p" th:text="#{aboutContent}"></p>
             <div class="vision-mission">
                 <div class="vision">
-                    <h3>Моят подход</h3>
-                    <p>Моят стил на работа е основан на разбиране, откритост и уважение към индивидуалния път на всеки човек. Комбинирам научно доказани техники с персонализиран подход, за да открием заедно най-доброто решение за вас.</p>
+                    <h3 th:text="#{myApproach}"></h3>
+                    <p th:text="#{approachContent}"></p>
                 </div>
                 <div class="mission">
-                    <h3>Как мога да помогна?</h3>
-                    <p>- Да разберете по-добре своите мисли и емоции</p>
-                    <p>- Да изградите стратегии за справяне с тревожност, стрес и житейски предизвикателства</p>
-                    <p>- Да работим върху самооценката, границите и вътрешния диалог</p>
+                    <h3 th:text="#{howCanIHelp}"></h3>
+                    <p th:text="#{help1}"></p>
+                    <p th:text="#{help2}"></p>
+                    <p th:text="#{help3}"></p>
                 </div>
             </div>
             <div class="button-container">
                 <div class="buttons">
-                    <a href="/about" class="learn-more-button">Learn More</a>
-                    <a href="/contact" class="get-in-touch-button">Get In Touch</a>
+                    <a href="/about" class="learn-more-button" th:text="#{learnMore}"></a>
+                    <a href="/contact" class="get-in-touch-button" th:text="#{getInTouch}"></a>
                 </div>
             </div>
         </div>
@@ -43,100 +42,93 @@
 </section>
 
 <section class="services">
-    <h2 class="section-head">МОИТЕ УСЛУГИ</h2>
+    <h2 class="section-head" th:text="#{myServices}"></h2>
     <div class="parent">
         <div class="services-content">
-            <h2>Individual Therapy</h2>
+            <h2 th:text="#{individualTherapy}"></h2>
             <a href="/services/counselling">
                 <div class="services-item">
-                    <p>My individual therapy is:</p>
-                    <p>1. Finding the problem</p>
-                    <p>2. Fixing the problem</p>
-                    <p>3. Profit!</p>
+                    <p th:text="#{counsellingContent}"></p>
+                    <p th:text="#{counselling1}"></p>
+                    <p th:text="#{counselling2}"></p>
+                    <p th:text="#{counselling3}"></p>
                 </div>
             </a>
         </div>
         <div class="services-content">
-            <h2>VR Therapy</h2>
+            <h2 th:text="#{vrTherapy}"></h2>
             <a href="/services/vret">
                 <div class="services-item">
-                    <p>VR will make you face your hidden fears!</p>
+                    <p th:text="#{vrContent}"></p>
                 </div>
             </a>
         </div>
     </div>
 </section>
+
 <section class="therapy-section">
-
-
-
 </section>
 
 <section class="faq-section">
-        <div class="faq-container">
-            <div class="faq-header">
-                <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="faq-header">
+            <h2 th:text="#{faq}"></h2>
+        </div>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <p th:text="#{faq1}"></p>
+                    <button class="faq-toggle"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="faq-answer">
+                    <p th:text="#{faq1Answer}"></p>
+                </div>
             </div>
 
-
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <p>1. What is mental therapy, and how can it help me?</p>
-                        <button class="faq-toggle"><i class="fas fa-plus"></i></button>
-                    </div>
-                    <div class="faq-answer">
-                        <p>It's essential to feel comfortable and understood by your therapist. If you don't feel a connection, it's okay to discuss your concerns.</p>
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <p th:text="#{faq2}"></p>
+                    <button class="faq-toggle"><i class="fas fa-plus"></i></button>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <p>2. What if I don't feel a connection with my therapist?</p>
-                        <button class="faq-toggle"><i class="fas fa-plus"></i></button>
-                    </div>
-                    <div class="faq-answer">
-                        <p>You can expect a confidential and supportive environment where you can discuss your concerns openly.</p>
-                    </div>
+                <div class="faq-answer">
+                    <p th:text="#{faq2Answer}"></p>
                 </div>
+            </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <p>3. What should I expect in my first session?</p>
-                        <button class="faq-toggle"><i class="fas fa-plus"></i></button>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Insurance coverage varies. Contact your provider to understand your benefits.</p>
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <p th:text="#{faq3}"></p>
+                    <button class="faq-toggle"><i class="fas fa-plus"></i></button>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <p>4. Will therapy be covered by my insurance?</p>
-                        <button class="faq-toggle"><i class="fas fa-plus"></i></button>
-                    </div>
-                    <div class="faq-answer">
-                        <p>The duration of therapy depends on your individual needs and goals.</p>
-                    </div>
+                <div class="faq-answer">
+                    <p th:text="#{faq3Answer}"></p>
                 </div>
+            </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <p>5. How long does therapy usually take?</p>
-                        <button class="faq-toggle"><i class="fas fa-plus"></i></button>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Therapy can help with a range of issues, including anxiety, depression, relationship problems, and personal growth.</p>
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <p th:text="#{faq4}"></p>
+                    <button class="faq-toggle"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="faq-answer">
+                    <p th:text="#{faq4Answer}"></p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <p th:text="#{faq5}"></p>
+                    <button class="faq-toggle"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="faq-answer">
+                    <p th:text="#{faq5Answer}"></p>
                 </div>
             </div>
         </div>
+    </div>
 </section>
 
-<section class="contact-home">
-    <h2>Contact Me</h2>
-    <p>Email: info@boryanastherapy.com | Phone: +359 895 64 67 62</p>
-</section>
 <div th:replace="~{fragments/footer :: body}"></div>
 <script src="/js/homeScript.js"></script>
 <script src="/js/faq.js"></script>

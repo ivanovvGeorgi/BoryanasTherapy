@@ -25,6 +25,7 @@ public class SecurityConfiguration {
                         .dispatcherTypeMatchers(DispatcherType.ERROR).permitAll()
                         // Static resources
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
+                        .requestMatchers("/uploads/**").permitAll()
                         // Admin pages require ADMIN role
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .requestMatchers("/admin/articles/**").hasRole("ADMIN")
@@ -54,7 +55,7 @@ public class SecurityConfiguration {
                                 "/public/**",
                                 "/services/**",
                                 "/services",
-                                "/blog"
+                                "/blog/**"
                         ).permitAll()
                         // Keep this as authenticated for security
                         .anyRequest().authenticated()

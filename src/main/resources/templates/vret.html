@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="bg, en">
 <head th:replace="~{fragments/head}">
-  <title th:text="#{vret}">Virtual Reality Exposure Therapy</title>
+  <title th:text="#{vret.title}">Virtual Reality Exposure Therapy</title>
 </head>
 <body>
 <div th:replace="~{fragments/navbar :: body}"></div>
 
 <div class="parallax-section-vr">
-  <h1 class="parallax-title" th:text="#{vret}">Virtual Reality Exposure Therapy</h1>
+  <h1 class="parallax-title" th:text="#{vret.header}">Virtual Reality Exposure Therapy</h1>
 </div>
 
 <section class="about-me">
   <div class="content">
-    <h2>Exploring Virtual Reality Exposure Therapy (VRET)</h2>
-    <p>
+    <h2 th:text="#{vret.exploringTitle}">Exploring Virtual Reality Exposure Therapy (VRET)</h2>
+    <p th:text="#{vret.exploringParagraph1}">
       Virtual Reality Exposure Therapy (VRET) is an innovative approach to treating anxiety disorders and phobias. It uses immersive virtual reality technology to create realistic simulations of feared situations, allowing you to confront your anxieties in a safe and controlled environment.
     </p>
-    <p>
+    <p th:text="#{vret.exploringParagraph2}">
       VRET offers a powerful alternative to traditional exposure therapy, providing a more engaging and interactive experience. It can be particularly helpful for individuals who find it difficult to imagine or confront their fears in real-life settings.
     </p>
-    <h2>How VRET Works</h2>
-    <p>
+    <h2 th:text="#{vret.howWorksTitle}">How VRET Works</h2>
+    <p th:text="#{vret.howWorksParagraph1}">
       During VRET sessions, you'll wear a VR headset that immerses you in a computer-generated environment tailored to your specific fears. These simulations can range from public speaking and social interactions to heights, flying, and specific phobias like spiders or enclosed spaces.
     </p>
-    <p>
+    <p th:text="#{vret.howWorksParagraph2}">
       With the guidance of a therapist, you'll gradually confront these virtual scenarios, allowing you to experience and manage your anxiety in a controlled setting. The therapist can adjust the intensity and difficulty of the simulations to match your progress and comfort level.
     </p>
-    <h2>Benefits of VRET</h2>
+    <h2 th:text="#{vret.benefitsTitle}">Benefits of VRET</h2>
     <ul>
-      <li>Safe and Controlled Environment</li>
-      <li>Highly Immersive and Engaging</li>
-      <li>Personalized and Tailored to Your Needs</li>
-      <li>Effective for a Variety of Anxiety Disorders</li>
+      <li th:text="#{vret.benefitListItem1}">Safe and Controlled Environment</li>
+      <li th:text="#{vret.benefitListItem2}">Highly Immersive and Engaging</li>
+      <li th:text="#{vret.benefitListItem3}">Personalized and Tailored to Your Needs</li>
+      <li th:text="#{vret.benefitListItem4}">Effective for a Variety of Anxiety Disorders</li>
     </ul>
-    <h2>Is VRET Right for You?</h2>
-    <p>
+    <h2 th:text="#{vret.isRightTitle}">Is VRET Right for You?</h2>
+    <p th:text="#{vret.isRightParagraph}">
       If you're struggling with anxiety or phobias and are interested in exploring VRET, I encourage you to reach out. We can discuss your specific needs and determine if VRET is a suitable treatment option for you.
     </p>
     <div class="book-now-button-container">
-      <a href="/book" class="btn-primary" th:text="#{book}">Book an Appointment</a>
+      <a href="/book" class="btn-primary" th:text="#{booking.bookNow}">Book an Appointment</a>
     </div>
   </div>
 </section>

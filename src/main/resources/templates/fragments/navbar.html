@@ -1,22 +1,19 @@
-<!-- src/main/resources/templates/fragments/navbar.html -->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="bg, en">
 <head>
-  <title>Navbar</title>
+  <title th:text="#{navbar.title}">Navbar</title>
   <link rel="stylesheet" th:href="@{/css/navbar.css}">
 </head>
 <body>
 
 <nav id="navbar">
   <div class="logo_wrapper">
-    <a href="/"><img src="/images/my_logo.png" alt="logo" class="logo"></a>
+    <a href="/"><img src="/images/final_logo.jpg" alt="logo" class="logo"></a>
+    <a href="/" class="nav_title" th:text="#{navbar.brand}">Boryana's Therapy</a>
   </div>
-  <a href="/" class="nav_title">Boryana's Therapy</a>
 
-  <!-- Hamburger Menu -->
   <button class="menu-toggle" id="menu-toggle">☰</button>
 
-  <!-- Navigation Links -->
   <ul class="nav-links" id="nav-links">
     <li><a href="/" th:text="#{home}">Home</a></li>
     <li><a href="/about" th:text="#{about}">About me</a></li>
@@ -29,11 +26,9 @@
         <a class="services-dropdown" href="/services/counselling" th:text="#{counselling}">Individual Counselling</a>
         <a class="services-dropdown" href="/services/vret" th:text="#{vret}">Virtual Reality Exposure Therapy</a>
       </div></li>
-    <li><a href="/blog" th:text="#{blog}">Blog</a></li>
     <li><a href="/contact" th:text="#{contact}">Contact</a></li>
     <li class="nav-book"><a href="/book" th:text="#{book}">Book an Appointment</a></li>
 
-    <!-- Admin Dropdown -->
     <li sec:authorize="hasRole('ADMIN')" class="dropdown">
       <a href="/admin/control-panel" class="dropbtn">
         <span th:text="#{adminPanel}">Admin Panel</span>
@@ -43,7 +38,6 @@
         <a href="/admin/dashboard" th:text="#{bookings}">Bookings</a>
         <a href="/admin/messages" th:text="#{messages}">Messages</a>
         <a href="/admin/calendar" th:text="#{calendar}">Calendar</a>
-        <a href="/admin/articles" >Articles</a>
         <a href="/logout" th:text="#{logout}">Logout</a>
       </div>
     </li>
@@ -57,7 +51,6 @@
           <img src="/images/flags/us.svg" alt="English" class="flag-icon">
         </a>
       </div>
-
     </li>
   </ul>
 </nav>

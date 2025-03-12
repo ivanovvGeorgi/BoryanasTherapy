@@ -1,59 +1,49 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="bg, en">
 <head>
-  <title>Admin Dashboard - Messages</title>
+  <title th:text="#{messagesDashboard.title}">Admin Dashboard - Messages</title>
   <link rel="stylesheet" th:href="@{/css/reset-css.css}">
   <link rel="stylesheet" th:href="@{/css/admin.css}">
   <link rel="stylesheet" th:href="@{/css/navbar.css}">
   <link rel="stylesheet" th:href="@{/css/footer.css}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-
 </head>
 <body>
-<!-- Navbar Fragment -->
 <div th:replace="~{fragments/navbar :: body}"></div>
 
-<!-- Main Content Area -->
 <div class="dashboard-container">
-  <h1 class="dashboard-title">Admin Dashboard</h1>
+  <h1 class="dashboard-title" th:text="#{messagesDashboard.header}">Admin Dashboard</h1>
 
-  <!-- New Messages Section -->
   <section class="messages-section new-messages">
-    <h2 class="section-title">New Messages</h2>
+    <h2 class="section-title" th:text="#{messagesDashboard.newMessagesTitle}">New Messages</h2>
     <ul class="message-list">
-      <!-- Loop through the new messages and display each message -->
       <li th:each="message : ${newMessages}" class="message-card">
         <div class="message-info">
-          <p><strong>Date:</strong> <span th:text="${#temporals.format(message.getDate(), 'dd-MM-yyyy HH:mm')}"></span></p>
-          <p><strong>Sender:</strong> <span th:text="${message.name}"></span></p>
-          <p><strong>Message:</strong> <span th:text="${message.message}"></span></p>
+          <p><strong th:text="#{messagesDashboard.dateLabel}">Date:</strong> <span th:text="${#temporals.format(message.getDate(), 'dd-MM-yyyy HH:mm')}"></span></p>
+          <p><strong th:text="#{messagesDashboard.senderLabel}">Sender:</strong> <span th:text="${message.name}"></span></p>
+          <p><strong th:text="#{messagesDashboard.messageLabel}">Message:</strong> <span th:text="${message.message}"></span></p>
           <form th:action="@{/admin/read/{id}(id=${message.id})}" method="post">
-            <button type="submit" class="mark-read-button">Mark as Read</button>
+            <button type="submit" class="mark-read-button" th:text="#{messagesDashboard.markReadButton}">Mark as Read</button>
           </form>
-
           <form th:action="@{/admin/delete/{id}(id=${message.id})}" method="post">
-            <button type="submit" class="delete-button">Delete</button>
+            <button type="submit" class="delete-button" th:text="#{messagesDashboard.deleteButton}">Delete</button>
           </form>
-
         </div>
       </li>
     </ul>
   </section>
 
-  <!-- Read Messages Section -->
   <section class="messages-section read-messages">
-    <h2 class="section-title">Read Messages</h2>
+    <h2 class="section-title" th:text="#{messagesDashboard.readMessagesTitle}">Read Messages</h2>
     <ul class="message-list">
-      <!-- Loop through the read messages and display each message -->
       <li th:each="message : ${readMessages}" class="message-card">
         <div class="message-info">
-          <p><strong>Date:</strong> <span th:text="${#temporals.format(message.getDate(), 'dd-MM-yyyy HH:mm')}"></span></p>
-          <p><strong>Sender:</strong> <span th:text="${message.name}"></span></p>
-          <p><strong>Message:</strong> <span th:text="${message.message}"></span></p>
+          <p><strong th:text="#{messagesDashboard.dateLabel}">Date:</strong> <span th:text="${#temporals.format(message.getDate(), 'dd-MM-yyyy HH:mm')}"></span></p>
+          <p><strong th:text="#{messagesDashboard.senderLabel}">Sender:</strong> <span th:text="${message.name}"></span></p>
+          <p><strong th:text="#{messagesDashboard.messageLabel}">Message:</strong> <span th:text="${message.message}"></span></p>
         </div>
-
         <form th:action="@{/admin/delete/{id}(id=${message.id})}" method="post">
-          <button type="submit" class="delete-button">Delete</button>
+          <button type="submit" class="delete-button" th:text="#{messagesDashboard.deleteButton}">Delete</button>
         </form>
       </li>
     </ul>

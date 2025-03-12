@@ -2,124 +2,119 @@
 <html lang="en, bg" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/head}">
     <meta charset="UTF-8">
-    <title>Cookies</title>
+    <title th:text="#{terms.title}"></title>
 </head>
 <body>
 <div th:replace="~{fragments/navbar :: body}"></div>
 <header class="legal-header">
-    <h1>Общи условия за използване</h1>
+    <h1 th:text="#{terms.header}"></h1>
 </header>
 
 <section class="legal-section">
-    <h2><strong>Общи условия за използване на уебсайта и предоставяне на психологически услуги</strong></h2>
-    <p>Настоящите общи условия уреждат условията за използване на домейн, наричан по-долу за краткост “уебсайта”.</p>
+    <h2 th:text="#{terms.header}"></h2>
+    <p th:text="#{terms.intro}"></p>
 
-    <p>Уебсайтът се управлява от Боряна Димитрова Зафирова, регистрирана като психолог на свободна професия, наричана по-долу за краткост “психологът”. Контакти:<br>
-        Email: <a href="mailto:boryanas.therapy@gmail.com">boryanas.therapy@gmail.com</a><br>
-        Телефон: <a href="tel:+359895646762">+359 89 564 6762</a></p>
+    <p><th:block th:text="#{terms.managedBy}"></th:block><br>
+        <th:block th:text="#{terms.email}"></th:block> <a href="mailto:boryanas.therapy@gmail.com">boryanas.therapy@gmail.com</a><br>
+        <th:block th:text="#{terms.phone}"></th:block> <a href="tel:+35988888888">+359 88 888 8888</a></p>
     <ul class="roman-ul">
-        <li>Общи разпоредби.
+        <li><th:block th:text="#{terms.general.title}"></th:block>
             <ol class="numbers-ol">
-                <li>Настоящите Общи условия уреждат отношенията между психолога Боряна Димитрова Зафирова, собственик на Boryana’s Therapy, и клиентите, които използват уебсайта и описаните на него психологически услуги.</li>
-                <li>Психологът е регистриран в НАП и агенцията по вписванията като психолог на свободна професия.</li>
-                <li>Психологът е дипломиран специалист и предоставя услуги съгласно законодателството на Република България и етичния кодекс на психолозите.
-                </li>
-                <li>Настоящите общи условия са задължителни за всички потребители на платформата. С използването на уебсайта и описаните в него услуги, клиентът се съгласява с настоящите Общи условия.
-                </li>
+                <li th:text="#{terms.general.relationship}"></li>
+                <li th:text="#{terms.general.registration}"></li>
+                <li th:text="#{terms.general.qualification}"></li>
+                <li th:text="#{terms.general.mandatory}"></li>
             </ol>
         </li>
-        <li>Услуги.
+        <li><th:block th:text="#{terms.services.title}"></th:block>
             <ol class="numbers-ol">
-                <li>Психологът предоставя индивидуални консултации и други свързани с психологията услуги.</li>
-                <li>Консултациите могат да се провеждат присъствено в кабинет, уреден от психолога, или онлайн чрез предварително уговорена с клиента платформа.
-                </li>
-                <li>Психологът не предоставя медицински услуги и не предписва медикаменти.</li>
-                <li>Психологът предоставя услуги в съответствие с етичните стандарти на психолозите.</li>
-                <li>Психологът предоставя услугите си с максимално качество, но успехът и резултатите им зависят от активното ангажиране на клиента в процеса.</li>
+                <li th:text="#{terms.services.individual}"></li>
+                <li th:text="#{terms.services.location}"></li>
+                <li th:text="#{terms.services.medical}"></li>
+                <li th:text="#{terms.services.ethics}"></li>
+                <li th:text="#{terms.services.engagement}"></li>
             </ol>
         </li>
-        <li>Записване и отмяна на часове.
+        <li><th:block th:text="#{terms.appointments.title}"></th:block>
             <ol class="numbers-ol">
-                <li>Часове за консултация се записват предварително чрез уебсайта, телефон, имейл или социални мрежи.</li>
-                <li>След запазване на час за консултация от страна на клиента, психологът предоставя потвърждение на посочения от клиента имейл адрес, както и напомнящ имейл 24 часа преди уговореното време.
-                </li>
-                <li>Клиентът има право да отмени и/или пренасочи час не по-късно от 24 часа преди уговореното време. В противен случай, таксата се дължи в пълен размер.</li>
-                <li>В случай на закъснение с повече от 15 минути, консултацията може да бъде отменена по преценка на психолога, без право на възстановяване на таксата.</li>
-                <li>В случай на невъзможност за предоставяне на услугата в уговорения ден и час от страна на психолога, клиентът следва да бъде уведомен не по-малко от 48 часа преди времето за провеждане. В такъв случай клиентът има право да поиска пренасочване на часа или връщане на заплатената такса.
-                </li>
-                <li>В случай на продължителна неработоспособност от страна на психолога, същият ще осигури алтернативна помощ и/или ще бъдете насочени към друг специалист.</li>
+                <li th:text="#{terms.appointments.schedule}"></li>
+                <li th:text="#{terms.appointments.confirmation}"></li>
+                <li th:text="#{terms.appointments.cancellation}"></li>
+                <li th:text="#{terms.appointments.delay}"></li>
+                <li th:text="#{terms.appointments.inability}"></li>
+                <li th:text="#{terms.appointments.incapacity}"></li>
             </ol>
         </li>
-        <li>Права и задължения на страните.
+        <li><th:block th:text="#{terms.rights.title}"></th:block>
             <ol class="numbers-ol">
-                <li>Психологът се задължава да спазва професионалната етика, конфиденциалност и правата на клиента.</li>
-                <li>Психологът има право да откаже предоставяне на услуги в случай на:
+                <li th:text="#{terms.rights.ethics}"></li>
+                <li><th:block th:text="#{terms.rights.refusal}"></th:block>
                     <ul class="circle-list">
-                        <li>Неподходящо поведение от страна на клиента;</li>
-                        <li>Състояния, които изискват медицинска намеса;</li>
-                        <li>Други основателни причини, които застрашават ефективността на работата.</li>
+                        <li th:text="#{terms.rights.behavior}"></li>
+                        <li th:text="#{terms.rights.medical}"></li>
+                        <li th:text="#{terms.rights.other}"></li>
                     </ul>
                 </li>
-                <li>Клиентът се задължава:
+                <li><th:block th:text="#{terms.rights.client}"></th:block>
                     <ul class="circle-list">
-                        <li>Да предоставя вярна и пълна информация, свързана с психологическото консултиране;</li>
-                        <li>Да спазва етичните норми в комуникацията с психолога;</li>
-                        <li>Да заплаща услугите в договорените срокове.</li>
+                        <li th:text="#{terms.rights.information}"></li>
+                        <li th:text="#{terms.rights.communication}"></li>
+                        <li th:text="#{terms.rights.payment}"></li>
                     </ul>
                 </li>
             </ol>
         </li>
-        <li>Конфиденциалност и обработка на лични данни.
+        <li><th:block th:text="#{terms.confidentiality.title}"></th:block>
             <ol class="numbers-ol">
-                <li>Всички споделени данни по време на консултациите са поверителни и няма да бъдат разкривани на трети лица, освен в следните случаи:
+                <li><th:block th:text="#{terms.confidentiality.privacy}"></th:block>
                     <ul class="circle-list">
-                        <li>При законово изискване от компетентните органи;</li>
-                        <li>При преценка, че клиентът или друго лице са в непосредствена опасност.</li>
+                        <li th:text="#{terms.confidentiality.legal}"></li>
+                        <li th:text="#{terms.confidentiality.danger}"></li>
                     </ul>
                 </li>
-                <li>Психологът спазва изискванията за защита на личните данни съгласно Регламент 2016/679 (Общ регламент относно защитата на данните) и Закон за защита на личните данни.</li>
-                <li>Предоставените от клиента лични данни се съхраняват в базата данни на психолога.</li>
-                <li>Психологът има право да записва консултациите под формата на текстови записки или аудио запис. Това се случва само след предварително съгласие от страна на клиента в началото на консултацията.</li>
+                <li th:text="#{terms.confidentiality.regulation}"></li>
+                <li th:text="#{terms.confidentiality.storage}"></li>
+                <li th:text="#{terms.confidentiality.records}"></li>
             </ol>
         </li>
-        <li>Цени на услугите и начини на плащане.
+        <li><th:block th:text="#{terms.prices.title}"></th:block>
             <ol class="numbers-ol">
-                <li>Цените за услугите са в български лева и/или евро, в зависимост от страната на закупуване на услугата.</li>
-                <li>Цените се определят от психолога и могат да бъдат актуализирани по всяко време. В случай на актуализиране, клиентът ще бъде уведомен минимум 7 дни преди актуализацията.</li>
-                <li>Плащането се извършва предварително в случай на онлайн консултации или веднага след приключване на консултацията в случай на консултация в кабинет чрез:
+                <li th:text="#{terms.prices.currency}"></li>
+                <li th:text="#{terms.prices.update}"></li>
+                <li><th:block th:text="#{terms.prices.payment}"></th:block>
                     <ul class="circle-list">
-                        <li>Банков превод;</li>
-                        <li>Онлайн разплащателни методи;</li>
-                        <li>В брой (при присъствени срещи).</li>
+                        <li th:text="#{terms.prices.bank}"></li>
+                        <li th:text="#{terms.prices.online}"></li>
+                        <li th:text="#{terms.prices.cash}"></li>
                     </ul>
                 </li>
-                <li>Доставчикът не носи отговорност за такси, наложени от платежни услуги и/или банки.</li>
-                <li>Не се приемат методи за разсрочено плащане.</li>
+                <li th:text="#{terms.prices.fees}"></li>
+                <li th:text="#{terms.prices.installment}"></li>
             </ol>
         </li>
-        <li>Отговорност.
+        <li><th:block th:text="#{terms.responsibility.title}"></th:block>
             <ol class="numbers-ol">
-                <li>Психологът не носи отговорност за решения, които клиентът взема въз основа на консултациите.</li>
-                <li>Услугите имат консултативен характер и не гарантират определен резултат.</li>
-                <li>Психологът не носи отговорност за липса на резултати от услугите.</li>
-                <li>Клиентът носи отговорност за активното си участие в процеса и се съгласява, че консултациите може да не донесат очакваните от него резултати и решение на всички проблеми.</li>
-                <li>Психологът не носи отговорност за некоректни и/или неверни данни, предоставени от страна на клиента.</li>
-                <li>Психологът не гарантира, че описаните в уебсайта услуги отговарят напълно на очакванията на клиента и не носи отговорност за това.</li>
-                <li>Психологът не носи отговорност в случай на случайни събития, включително проблеми в интернет връзката при онлайн консултации, технически и други обективни причини. В такъв случай, се договарят допълнителни условия между психолога и клиента с цел провеждане на консултацията.</li>
-                <li>Психологът нe нocи oтгoвopнocт зa вpeди, пpичинeни oт клиента нa тpeти лицa.</li>
-                <li>Психологът носи отговорност за предоставяне на качествени услуги съобразно законодателството на Република България.</li>
+                <li th:text="#{terms.responsibility.decisions}"></li>
+                <li th:text="#{terms.responsibility.consultative}"></li>
+                <li th:text="#{terms.responsibility.results}"></li>
+                <li th:text="#{terms.responsibility.participation}"></li>
+                <li th:text="#{terms.responsibility.data}"></li>
+                <li th:text="#{terms.responsibility.expectations}"></li>
+                <li th:text="#{terms.responsibility.events}"></li>
+                <li th:text="#{terms.responsibility.damages}"></li>
+                <li th:text="#{terms.responsibility.quality}"></li>
             </ol>
         </li>
-        <li>Допълнителни разяснения.
+        <li><th:block th:text="#{terms.additional.title}"></th:block>
             <ol class="numbers-ol">
-                <li>Настоящите Общи условия могат да бъдат актуализирани по всяко време.</li>
-                <li>Цялото съдържание на този уебсайт (текстове, изображения, материали) е защитено с авторско право и не може да бъде използвано, разпространявано или копирано без изричното съгласие на доставчика.</li>
-                <li>Всички спорове се решават чрез преговори, а при невъзможност – по съдебен ред съгласно българското законодателство.</li>
+                <li th:text="#{terms.additional.update}"></li>
+                <li th:text="#{terms.additional.copyright}"></li>
+                <li th:text="#{terms.additional.disputes}"></li>
             </ol>
         </li>
     </ul>
-    <p>Ако имате въпроси относно общите условия на домейн, хиперлинк да пише свържете се с нас и да препраща към контакт.</p>
-    <p>Настоящите общи условия влизат в сила от 01.03.2025г.</p>
+    <p th:text="#{terms.contactUs}"></p>
+    <p th:text="#{terms.effectiveDate}"></p>
 
 </section>
 <div th:replace="~{fragments/footer :: body}"></div>

@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="bg, en">
 <head th:replace="~{fragments/head}">
-
-    <title></title></head>
+    <title th:text="#{about.title}"></title>
+</head>
 <body>
 <div th:replace="~{fragments/navbar :: body}"></div>
 
 <div class="parallax-section">
-    <h1 class="parallax-title">About Me</h1>
+    <h1 class="parallax-title" th:text="#{about.parallaxTitle}"></h1>
 </div>
 
-<!-- Content Section -->
 <section class="about-me">
     <div class="content">
-        <h2>Welcome to My Therapy Practice</h2>
-        <p>
-            I am a certified psychologist with years of experience helping people navigate
-            life's challenges. My approach focuses on providing a safe and welcoming
-            environment where we can work together toward your personal growth and healing.
-        </p>
-        <p>
-            Whether you're dealing with anxiety, depression, or just need someone to talk to,
-            I'm here to support you on your journey.
-        </p>
+        <h2 th:text="#{about.greeting}"></h2>
+        <p class="about-me-content" th:text="#{about.intro}"></p>
+        <p th:text="#{about.specializationIntro}"></p>
+        <ul class="circle-list">
+            <li th:text="#{about.anxietyStress}"></li>
+            <li th:text="#{about.lowSelfEsteem}"></li>
+            <li th:text="#{about.depression}"></li>
+            <li th:text="#{about.relationships}"></li>
+            <li th:text="#{about.perfectionism}"></li>
+            <li th:text="#{about.lifeChanges}"></li>
+            <li th:text="#{about.trauma}"></li>
+        </ul>
     </div>
 </section>
-<!-- Certificates Section -->
+
 <section class="certificates">
-    <h2>My Certifications</h2>
+    <h2 th:text="#{about.certificationsTitle}"></h2>
     <div class="certificate-gallery">
         <div class="certificate-item">
             <img src="/images/certificate-1.png" alt="Certificate 1" class="certificate-img">
@@ -38,7 +39,6 @@
         <div class="certificate-item">
             <img src="/images/certificate-3.png" alt="Certificate 3" class="certificate-img">
         </div>
-
     </div>
 </section>
 

@@ -19,7 +19,6 @@ public class Article extends BaseEntity{
     private String title;
     @Column(columnDefinition = "TEXT") // For longer content
     private String content;
-    private String author; // Optional: If you want to track authors
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 

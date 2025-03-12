@@ -7,49 +7,38 @@
   <link rel="stylesheet" th:href="@{/css/footer.css}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
-  <title>Admin Panel - Manage Unavailable Dates</title>
+  <title th:text="#{calendarDashboard.title}">Admin Panel - Manage Unavailable Dates</title>
 
-  <!-- Flatpickr Styles -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
   <link rel="stylesheet" th:href="@{/css/admin-flatpickr.css}">
-
 </head>
 
 <body>
 <div th:replace="~{fragments/navbar :: body}"></div>
 
 <div class="dashboard-container">
-  <h2>Manage Unavailable Dates</h2>
+  <h2 th:text="#{calendarDashboard.header}">Manage Unavailable Dates</h2>
 
-  <label for="admin-datepicker">Select Unavailable Dates:</label>
-  <input type="text" id="admin-datepicker" placeholder="Pick dates">
+  <label for="admin-datepicker" th:text="#{calendarDashboard.selectDatesLabel}">Select Unavailable Dates:</label>
+  <input type="text" id="admin-datepicker" th:placeholder="#{calendarDashboard.pickDatesPlaceholder}">
 
-  <!-- Add Remove All Dates button -->
-  <button id="save-dates">Save Unavailable Dates</button>
-  <button id="remove-all-dates">Remove All Dates</button> <!-- New button -->
+  <button id="save-dates" th:text="#{calendarDashboard.saveDatesButton}">Save Unavailable Dates</button>
+  <button id="remove-all-dates" th:text="#{calendarDashboard.removeAllDatesButton}">Remove All Dates</button>
 
-  <h3>Current Unavailable Dates:</h3>
+  <h3 th:text="#{calendarDashboard.currentUnavailableDates}">Current Unavailable Dates:</h3>
   <ul id="unavailable-dates-list"></ul>
 
-  <div class="message success" id="success-message">Unavailable dates saved successfully!</div>
-  <div class="message error" id="error-message">Error: Could not save dates. Please try again.</div>
+  <div class="message success" id="success-message" th:text="#{calendarDashboard.successMessage}">Unavailable dates saved successfully!</div>
+  <div class="message error" id="error-message" th:text="#{calendarDashboard.errorMessage}">Error: Could not save dates. Please try again.</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
   $(document).ready(function() {
-    // Load existing unavailable dates
     $.get("/public/unavailable-dates", function(data) {
-      // Sort the dates in ascending order
       data.sort((a, b) => new Date(a) - new Date(b));
-
-      // Clear the current list before adding sorted dates
       $("#unavailable-dates-list").empty();
-
-      // Append sorted dates to the list
       data.forEach(date => {
         let formattedDate = new Date(date).toLocaleDateString("bg-BG", {
           day: "2-digit",
@@ -59,34 +48,26 @@
         $("#unavailable-dates-list").append(`<li>${formattedDate}</li>`);
       });
 
-
-      // Initialize Flatpickr with disabled dates
       flatpickr("#admin-datepicker", {
         mode: "multiple",
-        dateFormat: "Y-m-d", // Backend format (hidden)
+        dateFormat: "Y-m-d",
         altInput: true,
-        altFormat: "d-m-Y", // Display format (shown to the user)
+        altFormat: "d-m-Y",
         minDate: "today",
-        defaultDate: data, // Preload unavailable dates
-        firstDayOfWeek: 1,  // Monday as the first day of the week
+        defaultDate: data,
+        firstDayOfWeek: 1,
         locale: {
-          firstDayOfWeek: 1  // Ensure Monday is the first day in locale too
+          firstDayOfWeek: 1
         },
         disable: [
           function(date) {
-            // Disable weekends (Saturday = 6, Sunday = 0)
             return (date.getDay() === 0 || date.getDay() === 6);
           }
         ],
         onDayCreate: function(_, __, ___, dayElem) {
-          // Get the day from the date object
           let date = new Date(dayElem.dateObj);
-
-          // Get today's date
           let today = new Date();
-          today.setHours(0, 0, 0, 0);  // Remove time component for accurate comparison
-
-          // Add 'weekend' class only to future Saturdays and Sundays
+          today.setHours(0, 0, 0, 0);
           if (date > today && (date.getDay() === 0 || date.getDay() === 6)) {
             dayElem.classList.add("weekend");
           }
@@ -94,7 +75,6 @@
       });
     });
 
-    // Save unavailable dates (ADMIN ONLY)
     $("#save-dates").click(function() {
       let selectedDates = $("#admin-datepicker").val().split(",");
 
@@ -104,15 +84,13 @@
         contentType: "application/json",
         data: JSON.stringify(selectedDates),
         success: function(response) {
-          // Show success message and reset list
           $("#success-message").fadeIn();
           setTimeout(function() {
             $("#success-message").fadeOut();
           }, 3000);
-          location.reload(); // Refresh to show updated dates
+          location.reload();
         },
         error: function() {
-          // Show error message
           $("#error-message").fadeIn();
           setTimeout(function() {
             $("#error-message").fadeOut();
@@ -121,21 +99,18 @@
       });
     });
 
-    // Remove all unavailable dates (ADMIN ONLY)
     $("#remove-all-dates").click(function() {
       $.ajax({
         url: "/admin/unavailable-dates",
-        method: "DELETE", // Use DELETE request to remove all dates
+        method: "DELETE",
         success: function(response) {
-          // Show success message and reset list
           $("#success-message").fadeIn();
           setTimeout(function() {
             $("#success-message").fadeOut();
           }, 3000);
-          location.reload(); // Refresh to show updated dates
+          location.reload();
         },
         error: function(xhr, status, error) {
-          // Show error message
           $("#error-message").fadeIn();
           setTimeout(function() {
             $("#error-message").fadeOut();
@@ -144,9 +119,6 @@
       });
     });
   });
-
-
 </script>
-
 </body>
 </html>

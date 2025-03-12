@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="bg, en">
 <head>
-  <title>Login</title>
+  <title th:text="#{login.title}">Login</title>
   <link rel="stylesheet" th:href="@{/css/reset-css.css}">
   <link rel="stylesheet" th:href="@{/css/navbar.css}">
   <link rel="stylesheet" th:href="@{/css/admin-login.css}">
   <link rel="stylesheet" th:href="@{/css/footer.css}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-
 </head>
 <body>
 <div th:replace="~{fragments/navbar :: body}"></div>
 <div class="login-container">
   <div class="login-card">
-    <h1 class="login-title">Admin Login</h1>
+    <h1 class="login-title" th:text="#{login.header}">Admin Login</h1>
 
     <form th:action="@{/admin/login}" method="post">
       <div class="input-group">
-        <label for="username" class="input-label">Username</label>
-        <input type="text" id="username" name="username" class="input-field" required="required" placeholder="Enter your username">
+        <label for="username" class="input-label" th:text="#{login.usernameLabel}">Username</label>
+        <input type="text" id="username" name="username" class="input-field" required="required" th:placeholder="#{login.usernamePlaceholder}">
       </div>
 
       <div class="input-group">
-        <label for="password" class="input-label">Password</label>
-        <input type="password" id="password" name="password" class="input-field" required="required" placeholder="Enter your password">
+        <label for="password" class="input-label" th:text="#{login.passwordLabel}">Password</label>
+        <input type="password" id="password" name="password" class="input-field" required="required" th:placeholder="#{login.passwordPlaceholder}">
       </div>
 
       <div class="button-container">
-        <button type="submit" class="login-button">Login</button>
+        <button type="submit" class="login-button" th:text="#{login.loginButton}">Login</button>
       </div>
     </form>
   </div>

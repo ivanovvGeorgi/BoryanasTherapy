@@ -20,8 +20,16 @@
     border-radius: 100%;
     transition: transform 0.3s ease-in-out;
 }
+.logo_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 10%;
+}
 
 #navbar .nav_title {
+    margin-left: 2%;
+    justify-items: center;
     font-size: 36px;
     font-family: "Brush Script MT", cursive;
     color: black;
@@ -46,9 +54,20 @@
     color: #000; /* Adjust the color as needed */
     font-weight: bold;
 }
-.nav-book{
-    background-color: #9fc6ee;
+#navbar .nav-book{
+    background-color: #7f94ad;
     border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.nav-book a {
+    color: white;
+}
+.nav-book a:hover{
+    color: white;
+}
+.nav-book:hover{
+    color: white;
+    background-color: #5784e7;
 }
 .nav-links a:hover{
     color: #2c3e50;

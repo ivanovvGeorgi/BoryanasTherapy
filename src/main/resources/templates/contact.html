@@ -3,55 +3,67 @@
 
 <head th:replace="~{fragments/head}">
     <meta charset="UTF-8">
-    <title>Contact Me</title>
+    <title th:text="#{contact.title}"></title>
     <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
 <div th:replace="~{fragments/navbar :: body}"></div>
 
 <section class="contact">
-    <h2>Contact Me</h2>
-    <p th:text="#{feel}">Feel free to reach out for any inquiries or appointments. I'll get back to you as soon as possible!</p>
+    <h2 th:text="#{contact.title}"></h2>
+    <p th:text="#{contact.feel}"></p>
 
     <div class="contact-container">
         <div class="left-column">
             <form th:action="@{/send-message}" th:object="${messageDTO}" method="post" class="contact-form" accept-charset="UTF-8">
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" th:field="*{name}" required placeholder="Your Name">
+                    <label for="name" th:text="#{contact.name}"></label>
+                    <input type="text" id="name" th:field="*{name}" required th:placeholder="#{contact.name}">
                     <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></div>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" th:field="*{email}" required placeholder="Your Email">
+                    <label for="email" th:text="#{contact.email}"></label>
+                    <input type="email" id="email" th:field="*{email}" required th:placeholder="#{contact.email}">
                     <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error"></div>
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" th:field="*{message}" required placeholder="Your Message"></textarea>
+                    <label for="message" th:text="#{contact.message}"></label>
+                    <textarea id="message" th:field="*{message}" required th:placeholder="#{contact.message}"></textarea>
                     <div th:if="${#fields.hasErrors('message')}" th:errors="*{message}" class="error"></div>
                 </div>
 
-                <button type="submit" class="submit-btn">Send Message</button>
+                <button type="submit" class="submit-btn" th:text="#{contact.send}"></button>
 
                 <div th:if="${successMessage}" class="success">
-                    <p th:text="${successMessage}"></p>
+                    <p th:text="#{contact.success}"></p>
                 </div>
             </form>
         </div>
 
         <div class="right-column">
             <div class="contact-details">
-                <h3>Get in Touch</h3>
-                <p><i class="fa-solid fa-phone"></i>Phone: +359 895 64 67 62</p>
-                <p><i class="fa-solid fa-envelope"></i>Email: contact@boryanatherapy.com</p>
-                <p><i class="fa-solid fa-location-dot"></i>Address: Sofia, Bulgaria</p>
+                <h3 th:text="#{contact.getInTouch}"></h3>
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    <th:block th:text="#{contact.phoneLabel}"></th:block>
+                    <a th:href="'tel:' + #{contact.phoneNumber}" th:text="#{contact.phoneNumber}"></a>
+                </p>
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    <th:block th:text="#{contact.emailLabel}"></th:block>
+                    <a th:href="'mailto:' + #{contact.emailAddress}" th:text="#{contact.emailAddress}"></a>
+                </p>
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <th:block th:text="#{contact.addressLabel}"></th:block>
+                    <span th:text="#{contact.address}"></span>
+                </p>
             </div>
 
             <div class="map-container">
-                <h3>Find Us Here</h3>
+                <h3 th:text="#{contact.findUs}"></h3>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11880.39488348827!2d23.32415136165352!3d42.69770820414296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa84f1e9a0c2bf%3A0x400a0125a81f9dd0!2sSofia!5e0!3m2!1sen!2sbg!4v1677777695741!5m2!1sen!2sbg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>

@@ -15,8 +15,13 @@ body {
     font-size: 20px;
 }
 
-body p {
+body p, body li {
     color: #6c7073;
+    font-size: 20px;
+}
+
+p{
+    font-size: 20px
 }
 
 section {
@@ -167,7 +172,7 @@ section {
 }
 
 .btn-primary {
-    background-color: #008080;
+    background-color: #7f94ad;
     color: #fff;
     padding: 15px 25px;
     text-decoration: none;
@@ -176,7 +181,7 @@ section {
 }
 
 .btn-primary:hover, .buttons a:hover {
-    background-color: #006d6d;
+    background-color: #5784e7;
     transform: scale(1.05);
 }
 .services h2{
@@ -228,12 +233,12 @@ section {
 
 /* First Item: */
 .services-content:nth-child(1) .services-item {
-    background-image: url('/images/flower.jpg');
+    background-image: url('/images/individual.jpg');
 }
 
 /* Second Item: */
 .services-content:nth-child(2) .services-item {
-    background-image: url('/images/stairway.jpg');
+    background-image: url('/images/vr-services.jpg');
 }
 
 .services-item:hover {
@@ -242,12 +247,12 @@ section {
 /*FAQ*/
 
 .faq-section {
-    background-image: url("/images/snow.jpg");
+    background-image: url("/images/faq_image.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     padding: 40px;
-    font-family: sans-serif;
+    font-family: Lora, serif;
     transition: height 0.5s ease-in-out; /* Add the transition */
 }
 
@@ -344,7 +349,7 @@ section {
 }
 
 .parallax-services {
-    background-image: url("/images/sea_waves.jpg");
+    background-image: url("/images/ducks.jpg");
 
 }
 
@@ -359,6 +364,9 @@ section {
 }
 
 /* About Me Section */
+.about-me-content{
+    margin-bottom: 5%;
+}
 .about-me {
     background: #fff;
     padding: 60px 20px;
@@ -374,11 +382,65 @@ section {
 }
 
 .about-me p {
-    font-size: 18px;
+    font-size: 20px;
     color: #666;
     line-height: 1.6;
 }
-
+.about-me li{
+    text-align: left;
+}
+/*Article And Blog Styling*/
+.article-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.article-h1 {
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+}
+.blog-article {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+.blog-article:hover {
+    transform: translateY(-5px);
+}
+.blog-article h2 {
+    margin-top: 0;
+    color: #444;
+    font-size: 22px;
+}
+.blog-article p {
+    color: #666;
+    line-height: 1.6;
+}
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    color: #fff;
+    background: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.article-meta {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.read-more:hover {
+    background: #0056b3;
+}
 
 /* Improved Booking Form Input Styling */
 .booking-container {
@@ -426,7 +488,7 @@ section {
 }
 
 button.booking_button {
-    background-color: #2563eb; /* blue-600 */
+    background-color: #7f94ad; /* blue-600 */
     color: white;
     padding: 12px 24px;
     border-radius: 1rem;
@@ -556,22 +618,22 @@ button.booking_button:active {
 
 /* Green for available slots */
 .available {
-    background-color: #28a745; /* Bootstrap success green */
+    background-color: #a7c5ea; /* Bootstrap success green */
     color: white;
-    border: 2px solid #218838;
+    border: 2px solid #6f87cd;
 }
 
 /* Yellow for booked slots */
 .booked {
-    background-color: #ffc107; /* Bootstrap warning yellow */
-    color: black;
-    border: 2px solid #e0a800;
+    background-color: #cfcfcf; /* Bootstrap warning yellow */
+    color: #ffffff;
+    border: 2px solid #919191;
     cursor: not-allowed !important;
 }
 
 /* Hover effects for available slots */
 .available:hover {
-    background-color: #218838;
+    background-color: #5984a7;
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -758,7 +820,7 @@ button.booking_button:active {
 }
 
 .contact-form .submit-btn {
-    background-color: #28a745;
+    background-color: #5984a7;
     color: white;
     padding: 12px 25px;
     border: none;
@@ -769,7 +831,7 @@ button.booking_button:active {
 }
 
 .contact-form .submit-btn:hover {
-    background-color: #218838;
+    background-color: #5784e7;
 }
 
 /* Contact Details Styles */

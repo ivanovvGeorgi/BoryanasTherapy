@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="~{fragments/head}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Confirmation</title>
+    <title th:text="#{confirmation.title}">Booking Confirmation</title>
 </head>
 
 <body>
 <div th:replace="~{fragments/navbar :: body}"></div>
 
 <div class="confirmation-container">
-    <h1>Booking Confirmed! <i class="fas fa-check-circle"></i></h1>
-    <p class="message">Your booking has been successfully confirmed! An email with the details will be sent to you shortly.</p>
+    <h1 th:text="#{confirmation.header}">Booking Confirmed! <i class="fas fa-check-circle"></i></h1>
+    <p class="message" th:text="#{confirmation.message}">Your booking has been successfully confirmed! An email with the details will be sent to you shortly.</p>
     <div class="book-now-button-container">
-        <a href="/" class="btn-primary">Return to Homepage</a>
+        <a href="/" class="btn-primary" th:text="#{confirmation.returnButton}">Return to Homepage</a>
     </div>
 </div>
-
 
 <div th:replace="~{fragments/footer :: body}"></div>
 </body>

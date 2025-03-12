@@ -1,54 +1,47 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="bg, en">
 <head>
-  <title>Admin Dashboard</title>
+  <title th:text="#{dashboard.title}">Admin Dashboard</title>
   <link rel="stylesheet" th:href="@{/css/reset-css.css}">
   <link rel="stylesheet" th:href="@{/css/admin.css}">
   <link rel="stylesheet" th:href="@{/css/navbar.css}">
   <link rel="stylesheet" th:href="@{/css/footer.css}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-
 </head>
 <body>
-<!-- Navbar Fragment -->
 <div th:replace="~{fragments/navbar :: body}"></div>
 
-<!-- Main Content Area -->
 <div class="dashboard-container">
-  <h1 class="dashboard-title">Admin Dashboard</h1>
+  <h1 class="dashboard-title" th:text="#{dashboard.header}">Admin Dashboard</h1>
 
-  <!-- Upcoming Bookings Section -->
   <section class="bookings-section upcoming-bookings">
-    <h2 class="section-title">Upcoming Bookings</h2>
+    <h2 class="section-title" th:text="#{dashboard.upcomingBookingsTitle}">Upcoming Bookings</h2>
     <ul class="booking-list">
-      <!-- Loop through the upcoming bookings and display each booking -->
       <li th:each="booking : ${upcomingBookings}" class="booking-card">
         <div class="booking-info">
-          <p><strong>Name:</strong> <span th:text="${booking.name}"></span></p>
-          <p><strong>Email:</strong> <span th:text="${booking.email}"></span></p>
-          <p><strong>Date:</strong> <span th:text="${booking.formattedDate}"></span></p>
-          <p><strong>Time:</strong> <span th:text="${booking.time}"></span></p>
+          <p><strong th:text="#{dashboard.nameLabel}">Name:</strong> <span th:text="${booking.name}"></span></p>
+          <p><strong th:text="#{dashboard.emailLabel}">Email:</strong> <span th:text="${booking.email}"></span></p>
+          <p><strong th:text="#{dashboard.dateLabel}">Date:</strong> <span th:text="${booking.formattedDate}"></span></p>
+          <p><strong th:text="#{dashboard.timeLabel}">Time:</strong> <span th:text="${booking.time}"></span></p>
           <form th:action="@{/admin/cancel/{id}(id=${booking.id})}" method="post">
-            <button type="submit" class="cancel-button">Cancel Booking</button>
+            <button type="submit" class="cancel-button" th:text="#{dashboard.cancelBookingButton}">Cancel Booking</button>
           </form>
         </div>
       </li>
     </ul>
   </section>
 
-  <!-- Past Bookings Section -->
   <section class="bookings-section past-bookings">
-    <h2 class="section-title">Past Bookings</h2>
+    <h2 class="section-title" th:text="#{dashboard.pastBookingsTitle}">Past Bookings</h2>
     <ul class="booking-list">
-      <!-- Loop through the past bookings and display each booking -->
       <li th:each="booking : ${pastBookings}" class="booking-card">
         <div class="booking-info">
-          <p><strong>Name:</strong> <span th:text="${booking.name}"></span></p>
-          <p><strong>Email:</strong> <span th:text="${booking.email}"></span></p>
-          <p><strong>Date:</strong> <span th:text="${booking.formattedDate}"></span></p>
-          <p><strong>Time:</strong> <span th:text="${booking.time}"></span></p>
+          <p><strong th:text="#{dashboard.nameLabel}">Name:</strong> <span th:text="${booking.name}"></span></p>
+          <p><strong th:text="#{dashboard.emailLabel}">Email:</strong> <span th:text="${booking.email}"></span></p>
+          <p><strong th:text="#{dashboard.dateLabel}">Date:</strong> <span th:text="${booking.formattedDate}"></span></p>
+          <p><strong th:text="#{dashboard.timeLabel}">Time:</strong> <span th:text="${booking.time}"></span></p>
           <form th:action="@{/admin/cancel/{id}(id=${booking.id})}" method="post">
-            <button type="submit" class="cancel-button">Delete Booking</button>
+            <button type="submit" class="cancel-button" th:text="#{dashboard.deleteBookingButton}">Delete Booking</button>
           </form>
         </div>
       </li>

@@ -1,13 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en, bg" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/head}">
     <meta charset="UTF-8">
-    <title>Privacy</title>
+    <title th:text="#{privacy.title}"></title>
 </head>
 <body>
 <div th:replace="~{fragments/navbar :: body}"></div>
+<header class="legal-header">
+    <h1 th:text="#{privacy.header}"></h1>
+</header>
 
+<section class="legal-section">
+    <h2 th:text="#{privacy.introduction.title}"></h2>
+    <p th:text="#{privacy.introduction.content}"></p>
+
+    <h2 th:text="#{privacy.information.title}"></h2>
+    <p th:text="#{privacy.information.personal}"></p>
+    <p th:text="#{privacy.information.usage}"></p>
+    <p th:text="#{privacy.information.cookies}"></p>
+
+    <h2 th:text="#{privacy.use.title}"></h2>
+    <p th:text="#{privacy.use.services}"></p>
+    <p th:text="#{privacy.use.communication}"></p>
+    <p th:text="#{privacy.use.analysis}"></p>
+    <p th:text="#{privacy.use.legal}"></p>
+
+    <h2 th:text="#{privacy.sharing.title}"></h2>
+    <p th:text="#{privacy.sharing.providers}"></p>
+    <p th:text="#{privacy.sharing.legal}"></p>
+    <p th:text="#{privacy.sharing.rights}"></p>
+
+    <h2 th:text="#{privacy.security.title}"></h2>
+    <p th:text="#{privacy.security.content}"></p>
+
+    <h2 th:text="#{privacy.rights.title}"></h2>
+    <p th:text="#{privacy.rights.access}"></p>
+    <p th:text="#{privacy.rights.restrict}"></p>
+    <p th:text="#{privacy.rights.withdraw}"></p>
+    <p th:text="#{privacy.rights.lodge}"></p>
+
+    <h2 th:text="#{privacy.retention.title}"></h2>
+    <p th:text="#{privacy.retention.content}"></p>
+
+    <h2 th:text="#{privacy.links.title}"></h2>
+    <p th:text="#{privacy.links.content}"></p>
+
+    <h2 th:text="#{privacy.updates.title}"></h2>
+    <p th:text="#{privacy.updates.content}"></p>
+
+    <h2 th:text="#{privacy.contact.title}"></h2>
+    <p>
+        <th:block th:text="#{privacy.contact.managedBy}"></th:block><br>
+        <th:block th:text="#{privacy.contact.email}"></th:block> <a th:href="'mailto:' + #{privacy.contact.emailAddress}" th:text="#{privacy.contact.emailAddress}"></a><br>
+        <th:block th:text="#{privacy.contact.phone}"></th:block> <a th:href="'tel:' + #{privacy.contact.phoneNumber}" th:text="#{privacy.contact.phoneNumber}"></a>
+    </p>
+</section>
 <div th:replace="~{fragments/footer :: body}"></div>
 </body>
 </html>

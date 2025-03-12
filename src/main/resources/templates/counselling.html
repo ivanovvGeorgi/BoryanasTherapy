@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="bg, en">
 <head th:replace="~{fragments/head}">
-  <title th:text="#{counselling}">Individual Counselling</title>
+  <title th:text="#{counselling.title}">Individual Counselling</title>
 </head>
 <body>
 <div th:replace="~{fragments/navbar :: body}"></div>
 
 <div class="parallax-section-individual">
-  <h1 class="parallax-title" th:text="#{counselling}">Individual Counselling</h1>
+  <h1 class="parallax-title" th:text="#{counselling.header}">Individual Counselling</h1>
 </div>
 
 <section class="about-me">
   <div class="content">
-    <h2>Understanding Individual Counselling</h2>
-    <p>
+    <h2 th:text="#{counselling.understandingTitle}">Understanding Individual Counselling</h2>
+    <p th:text="#{counselling.understandingParagraph1}">
       Individual counselling provides a safe and confidential space for you to explore your thoughts, feelings, and behaviors with a trained professional. It's an opportunity to gain insight into your challenges, develop coping strategies, and work towards positive change.
     </p>
-    <p>
+    <p th:text="#{counselling.understandingParagraph2}">
       Whether you're struggling with anxiety, depression, relationship issues, grief, or other life challenges, individual counselling can offer support and guidance.
     </p>
-    <h2>How I Can Help</h2>
-    <p>
+    <h2 th:text="#{counselling.howHelpTitle}">How I Can Help</h2>
+    <p th:text="#{counselling.howHelpParagraph1}">
       My approach to individual counselling is client-centered and collaborative. I believe in creating a strong therapeutic relationship built on trust, empathy, and understanding. I will work with you to:
     </p>
     <ul>
-      <li>Identify and understand your concerns</li>
-      <li>Develop coping mechanisms and strategies</li>
-      <li>Enhance self-awareness and personal growth</li>
-      <li>Improve your overall well-being</li>
+      <li th:text="#{counselling.helpListItem1}">Identify and understand your concerns</li>
+      <li th:text="#{counselling.helpListItem2}">Develop coping mechanisms and strategies</li>
+      <li th:text="#{counselling.helpListItem3}">Enhance self-awareness and personal growth</li>
+      <li th:text="#{counselling.helpListItem4}">Improve your overall well-being</li>
     </ul>
-    <p>
+    <p th:text="#{counselling.techniquesParagraph}">
       I use evidence-based techniques tailored to your specific needs and goals. Some of the approaches I draw upon include:
     </p>
     <ul>
-      <li>Cognitive Behavioral Therapy (CBT)</li>
-      <li>Mindfulness-Based Therapies</li>
-      <li>Solution-Focused Therapy</li>
+      <li th:text="#{counselling.techniqueListItem1}">Cognitive Behavioral Therapy (CBT)</li>
+      <li th:text="#{counselling.techniqueListItem2}">Mindfulness-Based Therapies</li>
+      <li th:text="#{counselling.techniqueListItem3}">Solution-Focused Therapy</li>
     </ul>
-    <h2>Taking the First Step</h2>
-    <p>
+    <h2 th:text="#{counselling.firstStepTitle}">Taking the First Step</h2>
+    <p th:text="#{counselling.firstStepParagraph}">
       If you're considering individual counselling, I encourage you to reach out. We can schedule a consultation to discuss your needs and how I can help.
     </p>
     <div class="book-now-button-container">
-      <a href="/book" class="btn-primary" th:text="#{book}">Book an Appointment</a>
+      <a href="/book" class="btn-primary" th:text="#{booking.bookNow}">Book an Appointment</a>
     </div>
   </div>
 </section>
