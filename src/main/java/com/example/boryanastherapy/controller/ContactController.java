@@ -26,6 +26,8 @@ public class ContactController {
         this.messageService = messageService;
     }
 
+
+
     @GetMapping("/contact")
     public String showContactPage(Model model) {
         model.addAttribute("messageDTO", new MessageDTO()); // Add a new instance of MessageDTO

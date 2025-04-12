@@ -90,6 +90,7 @@ public class BookingController {
 
     // Get bookings for a specific date (useful for availability checks)
     @GetMapping("/date")
+    @ResponseBody
     public List<Booking> getBookingsForDate(@RequestParam("date") String dateStr) {
         LocalDate date = LocalDate.parse(dateStr);
         return bookingService.getBookingsForDay(date);
@@ -97,6 +98,7 @@ public class BookingController {
 
     // Check if a specific slot is available (useful for frontend availability checks)
     @GetMapping("/check")
+    @ResponseBody
     public boolean checkAvailability(@RequestParam("date") String dateStr, @RequestParam("time") String timeStr) {
         LocalDate date = LocalDate.parse(dateStr);
         LocalTime time = LocalTime.parse(timeStr);

@@ -68,5 +68,4 @@ public class AdminArticleController {
         }
         return "error";
     }
-
 }

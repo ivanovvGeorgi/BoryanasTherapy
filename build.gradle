@@ -41,11 +41,16 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // Explicitly add byte-buddy-agent
+    testImplementation 'net.bytebuddy:byte-buddy-agent:latest.release'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+    jvmArgs += "-javaagent:${configurations.testRuntimeClasspath.filter { it.name.contains('byte-buddy-agent') }.singleFile}"
 }
+
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
@@ -72,4 +77,3 @@ compileJava {
 processResources {
     filteringCharset = 'UTF-8'
 }
-

@@ -31,15 +31,13 @@ public class BookingReminderService {
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime targetTime = now.plusHours(24);
 
-        // Get the target date and time for 24 hours from now
         LocalDate targetDate = targetTime.toLocalDate();
         LocalTime targetTimeOfDay = targetTime.toLocalTime();
 
-        // Find bookings that match the exact date and time (24 hours from now)
-        List<Booking> upcomingBookings = bookingRepository.findBookingsWithin24Hours(targetDate, // Today
-                targetTimeOfDay, // Current time
-                targetDate.plusDays(1), // Tomorrow
-                targetTimeOfDay); // Target time tomorrow);
+        List<Booking> upcomingBookings = bookingRepository.findBookingsWithin24Hours(targetDate,
+                targetTimeOfDay,
+                targetDate.plusDays(1),
+                targetTimeOfDay);
 
         for (Booking booking : upcomingBookings) {
             sendReminderEmail(booking);
@@ -51,7 +49,6 @@ public class BookingReminderService {
         String subject = "Booking Reminder";
 
 
-        // Use your existing EmailService to send the email
         emailService.sendEmail(
                 to,
                 subject,

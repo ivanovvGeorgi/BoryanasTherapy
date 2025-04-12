@@ -37,11 +37,10 @@ public class SecurityConfiguration {
                         // Public pages
                         .requestMatchers(
                                 "/",
-                                "/index.html",
+                                "/index",
                                 "/css/**",
                                 "/js/**",
                                 "/images/**",
-                                "/booking-form",
                                 "/book/**",
                                 "/confirmation",
                                 "/book",
@@ -51,7 +50,6 @@ public class SecurityConfiguration {
                                 "/terms",
                                 "/cookies",
                                 "/send-message",
-                                "/test-book",
                                 "/public/**",
                                 "/services/**",
                                 "/services",
