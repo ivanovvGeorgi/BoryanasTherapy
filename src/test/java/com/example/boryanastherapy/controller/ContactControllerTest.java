@@ -1,6 +1,7 @@
 package com.example.boryanastherapy.controller;
 
 import com.example.boryanastherapy.model.dto.MessageDTO;
+import com.example.boryanastherapy.model.entity.Message;
 import com.example.boryanastherapy.service.EmailService;
 import com.example.boryanastherapy.service.MessageService;
 import org.junit.jupiter.api.BeforeEach;
@@ -80,15 +81,15 @@ class ContactControllerTest {
         messageDTO.setEmail("john.doe@example.com");
         messageDTO.setMessage("This is a test message.");
 
-        // Mock the message service (since saveMessage returns void, use doNothing)
-        doNothing().when(messageService).saveMessage(any());
+        // Mock the message service (make sure saveMessage does nothing)
+        doNothing().when(messageService).saveMessage(any(Message.class));
 
-        // Mock the email service
-        doNothing().when(emailService).sendEmail(any(), any(), any());  // Mock the sendEmail method to do nothing
+        // Mock the email service (ensure it doesn't send real emails)
+        doNothing().when(emailService).sendEmail(any(), any(), any());
 
         // Perform POST request to /send-message with valid data
         mockMvc.perform(post("/send-message")
-                        .contentType("application/x-www-form-urlencoded")  // Ensure correct content type
+                        .contentType("application/x-www-form-urlencoded")
                         .param("name", messageDTO.getName())
                         .param("email", messageDTO.getEmail())
                         .param("message", messageDTO.getMessage()))
@@ -96,8 +97,8 @@ class ContactControllerTest {
                 .andExpect(view().name("contact"))
                 .andExpect(model().attribute("successMessage", "Thank you! Your message has been sent."))
                 .andExpect(model().attributeExists("messageDTO"));
-
     }
+
 
 
     @Test

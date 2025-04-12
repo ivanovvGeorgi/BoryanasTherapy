@@ -27,6 +27,7 @@ $(document).ready(function() {
                 console.error("Error fetching unavailable dates:", error);
             });
     }
+
     // Function to get the user's preferred language
     function getUserLanguage() {
         let lang = "bg"; // Default to Bulgarian
@@ -100,7 +101,8 @@ $(document).ready(function() {
             console.log("Available Slots: ", data);
             $('#time-slots').empty();
 
-            if (data.every(slot => !slot.available)) {
+            // Update this condition to check for isAvailable
+            if (data.every(slot => !slot.isAvailable)) {
                 fullyBookedDates.add(selectedDate);
                 $(`.flatpickr-day[aria-label="${selectedDate}"]`).addClass("fully-booked");
             } else {
@@ -108,12 +110,13 @@ $(document).ready(function() {
                 $(`.flatpickr-day[aria-label="${selectedDate}"]`).removeClass("fully-booked");
             }
 
+            // Iterate through the slots and render them with correct classes
             data.forEach(function(slot) {
-                const slotClass = slot.available ? 'available' : 'booked';
+                const slotClass = slot.isAvailable ? 'available' : 'booked';
                 const slotHtml = `
                     <label for="time_${slot.time}" class="slot ${slotClass}">
                         <input type="radio" id="time_${slot.time}" name="time" value="${slot.time}"
-                               class="${slotClass}" ${slot.available ? '' : 'disabled'} required>
+                               class="${slotClass}" ${slot.isAvailable ? '' : 'disabled'} required>
                         <span>${slot.time}</span>
                     </label>
                 `;
