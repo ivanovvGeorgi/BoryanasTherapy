@@ -24,4 +24,4 @@ A full-stack Spring Boot application for therapists to manage appointments, clie
 ## ⚙️ How to Run Locally
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/therapist-booking-system.git
+   git clone https://github.com/ivanovvGeorgi/BoryanasTherapy.git
