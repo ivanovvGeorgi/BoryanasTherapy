@@ -15,39 +15,44 @@ spring:
   web:
     locale: bg
     locale-resolver: fixed
+
   messages:
     basename: messages/messages
     encoding: UTF-8
+
   security:
-    filter:
-      dispatcher-types: REQUEST,ERROR,ASYNC,FORWARD
     user:
-      name: gojgo
-      password: 1234
+      name: ${ADMIN_USERNAME}
+      password: ${ADMIN_PASSWORD}
+
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/boryanastherapy?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8
-    username: ${MYSQL_USER:root}
-    password: ${MYSQL_PASSWORD:1234}
+    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DB}?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
+
   mail:
     host: smtp.gmail.com
     port: 587
-    username: gojgo6@gmail.com
-    password: wexq qvyi macq khwh
+    username: ${EMAIL_USERNAME}
+    password: ${EMAIL_PASSWORD}
     properties:
       mail:
         smtp:
           auth: true
           starttls:
             enable: true
+
   sql:
     init:
       mode: never
       data-locations: classpath:data.sql
+
   mvc:
     hiddenmethod:
       filter:
         enabled: true
+
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
@@ -60,6 +65,7 @@ spring:
           characterEncoding: utf-8
           CharSet: utf-8
           useUnicode: true
+
   webflux:
     multipart:
       headers-charset: UTF-8
