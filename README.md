@@ -9,17 +9,19 @@ A full-stack Spring Boot application for therapists to manage appointments, clie
 - Spring Boot backend with Thymeleaf frontend.
 
 ## 📷 Screenshots
-*(Insert a few images here if you can — UI pages, dashboard, calendar, etc.)*
+
 
 ## 🚀 Tech Stack
 - Java 21
 - Spring Boot
-- Spring Security (optional, if used)
+- Spring Security
 - Spring Data JPA
 - Thymeleaf
-- MySQL / PostgreSQL
+- MySQL
 - Google Mail API
-- Maven
+- Gradle
+- Mockito
+- JUnit
 
 ## ⚙️ How to Run Locally
 1. Clone the repo:
