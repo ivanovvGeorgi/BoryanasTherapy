@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ServicesController {
     @GetMapping()
     public String services() {
-        return "/services";
+        return "services"; // No leading slash
     }
     @GetMapping("/counselling")
     public String individual() {
-        return "/counselling";
+        return "counselling"; // No leading slash
     }
     @GetMapping("/vret")
     public String vret() {
-        return "/vret";
+        return "vret"; // No leading slash
     }
 }
